@@ -1,0 +1,107 @@
+[
+    {
+        "id": 1,
+        "type": "info temperature",
+        "message": "Temperature (ºC) well within expected parameters",
+        "timestamp": "2025-04-14T10:30:00Z",
+        "fiberId": "2"
+    },
+    {
+        "id": 2,
+        "type": "urgent moisture",
+        "message": "Warning! Potential water leak in sector 78. Recommended steps include: Manually searching the area; Digging the specified location; Fixing pipeline damage.",
+        "timestamp": "2025-04-14T09:15:00Z",
+        "fiberId": "3"
+    },
+    {
+        "id": 3,
+        "type": "warning temperature",
+        "message": "Temperature has dropped by 5°C in the past hour. Adjust irrigation schedules to account for reduced evaporation rates.",
+        "timestamp": "2025-04-14T09:15:00Z",
+        "fiberId": "2"
+    },
+    {
+        "id": 4,
+        "type": "urgent moisture",
+        "message": "Pump efficiency has dropped by 25%. Schedule maintenance to ensure consistent water delivery.",
+        "timestamp": "2025-04-14T09:15:00Z",
+        "fiberId": "1"
+    },
+    {
+        "id": 5,
+        "type": "urgent moisture",
+        "message": "Temperatures expected to exceed 40°C in the next 12 hours. Increase irrigation intervals to prevent plant stress.",
+        "timestamp": "2025-04-14T09:15:00Z",
+        "fiberId": "3"
+    },
+    {
+        "id": 6,
+        "type": "info temperature",
+        "message": "Mild Temperature Fluctuation Detected",
+        "timestamp": "2025-04-14T09:15:00Z",
+        "fiberId": "2"
+    },
+    {
+        "id": 7,
+        "type": "warning temperature",
+        "message": "High Temperature in Sector 53  Approaching Critical Levels",
+        "timestamp": "2025-04-14T09:15:00Z",
+        "fiberId": "2"
+    },
+    {
+        "id": 8,
+        "type": "info moisture",
+        "message": "Soil Moisture Levels Stable",
+        "timestamp": "2025-04-14T09:15:00Z",
+        "fiberId": "1"
+    },
+    {
+        "id": 9,
+        "type": "urgent weather",
+        "message": "Severe Storm Approaching – Take Precautionary Measures",
+        "timestamp": "2025-04-14T09:15:00Z",
+        "fiberId": "1, 2, 3"
+    },
+    {
+        "id": 10,
+        "type": "warning moisture",
+        "message": "Soil Moisture Below Recommended Levels",
+        "timestamp": "2025-04-14T09:15:00Z",
+        "fiberId": "1"
+    },
+    {
+        "id": 11,
+        "type": "urgent temperature",
+        "message": "Extreme Heat Detected – Immediate Action Required",
+        "timestamp": "2025-04-14T09:15:00Z",
+        "fiberId": "2"
+    },
+    {
+        "id": 12,
+        "type": "urgent moisture",
+        "message": "Excessive Soil Saturation – Risk of Root Damage",
+        "timestamp": "2025-04-14T09:15:00Z",
+        "fiberId": "2"
+    },
+   {
+        "id": 13,
+        "type": "urgent temperature",
+        "message": "Excessive Soil Saturation – Risk of Root Damage",
+        "timestamp": "2025-04-14T09:15:00Z",
+        "fiberId": "1"
+    },
+    {
+        "id": 14,
+        "type": "urgent moisture",
+        "message": "Excessive Soil Saturation – Risk of Root Damage",
+        "timestamp": "2025-04-14T09:15:00Z",
+        "fiberId": "2"
+    },
+    {
+        "id": 15,
+        "type": "urgent temperature",
+        "message": "Excessive Soil Saturation – Risk of Root Damage",
+        "timestamp": "2025-04-14T09:15:00Z",
+        "fiberId": "1"
+    }
+]

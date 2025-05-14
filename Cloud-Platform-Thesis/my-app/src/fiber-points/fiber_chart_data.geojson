@@ -1,0 +1,1005 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 25,
+            "moisture": 3
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 18,
+            "moisture": 15
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 9,
+            "moisture": 20
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 9,
+            "moisture": 5
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 21,
+            "moisture": 18
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 20,
+            "moisture": 2
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 20,
+            "moisture": 16
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.79494,
+          37.933671
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 5,
+            "moisture": 5
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 35,
+            "moisture": 17
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 20,
+            "moisture": 5
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 5,
+            "moisture": 20
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 15,
+            "moisture": 8
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 8,
+            "moisture": 5
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 17,
+            "moisture": 9
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.794413684210527,
+          37.93419731578947
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 6,
+            "moisture": 14
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 32,
+            "moisture": 20
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 17,
+            "moisture": 9
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 16,
+            "moisture": 6
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 24,
+            "moisture": 9
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 32,
+            "moisture": 16
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 26,
+            "moisture": 3
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.793887368421053,
+          37.93472363157895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 4,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 20,
+            "moisture": 1
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 27,
+            "moisture": 2
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 23,
+            "moisture": 11
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 23,
+            "moisture": 10
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 11,
+            "moisture": 13
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 23,
+            "moisture": 16
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 32,
+            "moisture": 8
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.793361052631579,
+          37.93524994736842
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 5,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 12,
+            "moisture": 12
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 11,
+            "moisture": 2
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 27,
+            "moisture": 4
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 18,
+            "moisture": 2
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 20,
+            "moisture": 18
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 14,
+            "moisture": 16
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 29,
+            "moisture": 7
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.792834736842106,
+          37.93577626315789
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 33,
+            "moisture": 19
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 20,
+            "moisture": 4
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 31,
+            "moisture": 3
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 30,
+            "moisture": 18
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 6,
+            "moisture": 19
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 11,
+            "moisture": 2
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 34,
+            "moisture": 8
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.792308421052632,
+          37.93630257894737
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 30,
+            "moisture": 1
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 24,
+            "moisture": 9
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 18,
+            "moisture": 19
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 35,
+            "moisture": 5
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 18,
+            "moisture": 11
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 34,
+            "moisture": 8
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 21,
+            "moisture": 6
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.791782105263158,
+          37.93682889473684
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 8,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 11,
+            "moisture": 7
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 20,
+            "moisture": 6
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 16,
+            "moisture": 10
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 7,
+            "moisture": 1
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 9,
+            "moisture": 4
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 32,
+            "moisture": 13
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 8,
+            "moisture": 2
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.791255789473684,
+          37.93735521052631
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 9,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 11,
+            "moisture": 20
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 25,
+            "moisture": 6
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 33,
+            "moisture": 3
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 29,
+            "moisture": 4
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 18,
+            "moisture": 2
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 19,
+            "moisture": 19
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 14,
+            "moisture": 12
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.790729473684211,
+          37.93788152631579
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 10,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 20,
+            "moisture": 8
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 26,
+            "moisture": 9
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 26,
+            "moisture": 5
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 21,
+            "moisture": 14
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 32,
+            "moisture": 14
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 14,
+            "moisture": 17
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 35,
+            "moisture": 2
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.790203157894737,
+          37.93840784210526
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 11,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 20,
+            "moisture": 9
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 34,
+            "moisture": 9
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 15,
+            "moisture": 4
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 17,
+            "moisture": 12
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 5,
+            "moisture": 16
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 11,
+            "moisture": 10
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 31,
+            "moisture": 12
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.789676842105263,
+          37.938934157894735
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 12,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 30,
+            "moisture": 18
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 24,
+            "moisture": 1
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 19,
+            "moisture": 9
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 7,
+            "moisture": 8
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 22,
+            "moisture": 14
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 9,
+            "moisture": 12
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 21,
+            "moisture": 12
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.789150526315789,
+          37.93946047368421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 7,
+            "moisture": 11
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 27,
+            "moisture": 9
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 15,
+            "moisture": 12
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 33,
+            "moisture": 19
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 19,
+            "moisture": 2
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 15,
+            "moisture": 12
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 16,
+            "moisture": 15
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.788624210526316,
+          37.939986789473686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 14,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 31,
+            "moisture": 7
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 32,
+            "moisture": 8
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 31,
+            "moisture": 14
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 18,
+            "moisture": 2
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 34,
+            "moisture": 17
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 21,
+            "moisture": 3
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 12,
+            "moisture": 9
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.788097894736842,
+          37.94051310526316
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 15,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 27,
+            "moisture": 13
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 19,
+            "moisture": 1
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 24,
+            "moisture": 17
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 18,
+            "moisture": 11
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 9,
+            "moisture": 10
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 32,
+            "moisture": 1
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 11,
+            "moisture": 9
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.787571578947368,
+          37.94103942105263
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 16,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 5,
+            "moisture": 20
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 32,
+            "moisture": 19
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 27,
+            "moisture": 17
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 8,
+            "moisture": 16
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 24,
+            "moisture": 8
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 12,
+            "moisture": 15
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 32,
+            "moisture": 1
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.787045263157895,
+          37.94156573684211
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 17,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 7,
+            "moisture": 20
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 17,
+            "moisture": 9
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 16,
+            "moisture": 12
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 27,
+            "moisture": 7
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 32,
+            "moisture": 15
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 25,
+            "moisture": 19
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 6,
+            "moisture": 15
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.786518947368421,
+          37.94209205263158
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 18,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 15,
+            "moisture": 5
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 30,
+            "moisture": 13
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 22,
+            "moisture": 9
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 26,
+            "moisture": 12
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 22,
+            "moisture": 19
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 19,
+            "moisture": 7
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 31,
+            "moisture": 9
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.785992631578948,
+          37.94261836842105
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 19,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 23,
+            "moisture": 10
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 34,
+            "moisture": 14
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 21,
+            "moisture": 16
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 29,
+            "moisture": 19
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 19,
+            "moisture": 20
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 13,
+            "moisture": 11
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 31,
+            "moisture": 7
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.785466315789473,
+          37.94314468421053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 20,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-26T16:01:36.007Z",
+            "temperature": 10,
+            "moisture": 4
+          },
+          {
+            "timestamp": "2025-03-26T20:01:36.007Z",
+            "temperature": 28,
+            "moisture": 1
+          },
+          {
+            "timestamp": "2025-03-27T00:01:36.007Z",
+            "temperature": 16,
+            "moisture": 5
+          },
+          {
+            "timestamp": "2025-03-27T04:01:36.007Z",
+            "temperature": 15,
+            "moisture": 13
+          },
+          {
+            "timestamp": "2025-03-27T08:01:36.007Z",
+            "temperature": 31,
+            "moisture": 1
+          },
+          {
+            "timestamp": "2025-03-27T12:01:36.007Z",
+            "temperature": 11,
+            "moisture": 14
+          },
+          {
+            "timestamp": "2025-03-27T16:01:36.007Z",
+            "temperature": 27,
+            "moisture": 4
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.78494,
+          37.943671
+        ]
+      }
+    }
+  ]
+}
