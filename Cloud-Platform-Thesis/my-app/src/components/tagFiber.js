@@ -33,7 +33,7 @@ function TagFiber({ fiberId, label, defaultActive = true, onToggle, onClick }) {
             {/*<span className="dot" style={{ backgroundColor: isActive ? '#F8F8FF' : color }} />*/}
             {label}
             {isActive && <CloseRoundedIcon fontSize="small" />}
-            
+
         </div>
     );
 }

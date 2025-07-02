@@ -16,12 +16,24 @@ function Login() {
         setError('');
 
         try {
-            const { token, user } = await cosmicAuth(email, password);
+            const response = await fetch('http://localhost:5000/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password }),
+                credentials: 'include'
+            });
+
+            if (!response.ok) {
+                const data = await response.json();
+                throw new Error(data.message || 'Invalid email or password');
+            }
+
+            const { token, user } = await response.json();
 
             localStorage.setItem('cosmic_token', token);
             localStorage.setItem('user_data', JSON.stringify(user));
 
-            navigate('/map'); // Redirect to profile after login
+            navigate('/map');
         } catch (err) {
             setError(err.message || 'Invalid email or password');
         } finally {
@@ -44,22 +56,19 @@ function Login() {
         <>
             <div className="login-parent">
                 <div className="login-left">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="546" height="640" viewBox="0 0 546 640" fill="none">
-                        <g filter="url(#filter0_f_3407_5363)">
-                            <path d="M312.439 296.559C279.776 385.76 34.3468 464.156 -54.854 431.493C-144.055 398.83 106.646 261.685 139.309 172.484C171.972 83.2833 197.385 -82.0679 286.585 -49.4047C375.786 -16.7415 345.102 207.358 312.439 296.559Z" fill="url(#paint0_linear_3407_5363)" />
-                        </g>
-                        <defs>
-                            <filter id="filter0_f_3407_5363" x="-273.934" y="-253.614" width="819.163" height="892.668" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                                <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_3407_5363" />
-                            </filter>
-                            <linearGradient id="paint0_linear_3407_5363" x1="268.365" y1="-56.0766" x2="72.7224" y2="478.209" gradientUnits="userSpaceOnUse">
-                                <stop stopColor="#99CA8D" />
-                                <stop offset="1" stopColor="#9747FF" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
+                    <div
+                        className="login-gradient-animated"
+                        style={{
+                            position: 'absolute',
+                            width: 325.28,
+                            height: 568.98,
+                            left: 115.64,
+                            top: -112,
+                            borderRadius: 50,
+                            // Remove background, boxShadow, filter, and transform from here
+                        }}
+                    />
+
                 </div>
                 <div className="login-right">
                     <div className="login-right-head">
@@ -68,7 +77,6 @@ function Login() {
                     <div className="login-right-form">
                         <form className="login-right-form-inputs" onSubmit={handleSubmit}>
                             <div className="login-right-form-inputs">
-
                                 <input
                                     type="email"
                                     value={email}
@@ -76,6 +84,7 @@ function Login() {
                                     placeholder='Email'
                                     required
                                     disabled={isLoading}
+                                    className={error ? 'invalid' : ''}
                                 />
                                 <input
                                     type="password"
@@ -84,15 +93,16 @@ function Login() {
                                     placeholder='Password'
                                     required
                                     disabled={isLoading}
+                                    className={error ? 'invalid' : ''}
                                 />
-                                {error && <p className="error">{error}</p>}
+                                {error && <p className="form-error">{error}</p>}
 
                             </div>
                             <div className="login-right-form-control">
                                 <button type='submit' disabled={isLoading} >
                                     {isLoading ? 'Logging in...' : 'Login'}
                                 </button>
-                                <p>
+                                {/*<p>
                                     Don't have one?
                                     <NavLink
                                         className='login-right-form-control-link'
@@ -100,7 +110,7 @@ function Login() {
                                     >
                                         Create one!
                                     </NavLink>
-                                </p>
+                                </p>*/}
                             </div>
                         </form>
                     </div>

@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { TagFiber } from '../components/tagFiber';
 import cosmic from '../components/cosmic';
 import { useMuiAlert } from '../components/muiAlertProvider';
+import { FiberColorContext, useFiberColors } from '../components/fiberColorContext';
 
 // Alert Icons
 import InfoM from '../resources/alert_icons/info_m.svg';
@@ -27,6 +28,21 @@ import UrgentWDark from '../resources/alert_icons/urgent_w_dark.svg';
 //MUI
 import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
 import NavigateBeforeRoundedIcon from '@mui/icons-material/NavigateBeforeRounded';
+import CalendarTodayRoundedIcon from '@mui/icons-material/CalendarTodayRounded';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { TextField, InputAdornment } from '@mui/material';
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import IconButton from '@mui/material/IconButton';
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+import { borderRadius } from '@mui/system';
+import ReplayRoundedIcon from '@mui/icons-material/ReplayRounded';
+import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
+
+import ReactDatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 function simpleHash(str) {
   let hash = 0;
@@ -45,10 +61,13 @@ function Alerts({
 }) {
   const [weatherAlerts, setWeatherAlerts] = useState([]);
   const { showAlert } = useMuiAlert();
+  const { getColor } = useFiberColors();
 
   //Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const alertsPerPage = 13;
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [open, setOpen] = useState(false);
 
   const handleNewAlert = (alert) => {
     onNewAlert({
@@ -88,7 +107,7 @@ function Alerts({
           type: 'info weather',
           message,
           timestamp: now,
-          fiberid: '1, 2, 3',
+          fiberid: 'system1, system2, system3',
         });
 
         // Show as popup only if this is a new alert
@@ -226,6 +245,40 @@ function Alerts({
     }
   };
 
+  function CustomCalendarContainer({ className, children }) {
+    return (
+      <div className={className} style={{ position: 'relative' }}>
+        {children}
+        {selectedDate && (
+          <div style={{ textAlign: 'right', marginTop: 8 }}>
+            <button
+              className="alerts-reset-btn"
+              onClick={() => {
+                setSelectedDate(null);
+                setOpen(false);
+              }}
+              aria-label="Reset date filter"
+              title="Reset date filter"
+              style={{
+                background: 'none',
+                border: '1px solid #ccc',
+                borderRadius: 4,
+                padding: '4px 12px',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 4,
+                zIndex: 10
+              }}
+            >
+              <ReplayRoundedIcon sx={{ fontSize: 16 }} />
+
+            </button>
+          </div>
+        )}
+      </div>
+    );
+  }
 
   const postAlertToCosmic = async (alert) => {
     try {
@@ -317,28 +370,159 @@ function Alerts({
       'urgent weather': UrgentW,
     };
 
+
+  const [searchTerm, setSearchTerm] = useState('');
+
   const indexOfLastAlert = currentPage * alertsPerPage;
   const indexOfFirstAlert = indexOfLastAlert - alertsPerPage;
-  const currentAlerts = weatherAlerts.slice(indexOfFirstAlert, indexOfLastAlert);
+  //const currentAlerts = weatherAlerts.slice(indexOfFirstAlert, indexOfLastAlert);
+  const filteredAlerts = (selectedDate || searchTerm)
+    ? weatherAlerts.filter(alert => {
+      const alertDate = new Date(alert.timestamp);
+      const dateMatch = selectedDate
+        ? (alertDate.getFullYear() === selectedDate.getFullYear() &&
+          alertDate.getMonth() === selectedDate.getMonth() &&
+          alertDate.getDate() === selectedDate.getDate())
+        : true;
 
+      const searchMatch = searchTerm
+        ? alert.message.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (alert.fiberid && alert.fiberid.toLowerCase().includes(searchTerm.toLowerCase()))
+        : true;
+
+      return dateMatch && searchMatch;
+    })
+    : weatherAlerts;
+
+  const currentAlerts = filteredAlerts.slice(indexOfFirstAlert, indexOfLastAlert);
+
+  const calendarButtonRef = useRef();
+  const [datepickerOpen, setDatepickerOpen] = useState(false);
 
   return (
     <>
-
-
-      <button
-        onClick={() => showAlert("Test alert!", "info", {
-          id: `forecast-temp-${simpleHash("Test alert!")}`,
-          title: 'Test Alertttt',
-          timestamp: new Date().toISOString(),
-        })}
-        style={{ position: 'fixed', top: 20, left: 20, zIndex: 1000 }}
-      >
-        Test Alert Popup
-      </button>
-
       <div className="alerts-parent">
-        <div className="alerts-head" />
+        <div className="alerts-head">
+          <TextField
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            size="small"
+            placeholder="Search alerts..."
+            variant="outlined"
+            fullWidth
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchRoundedIcon />
+                </InputAdornment>
+              ),
+              endAdornment: searchTerm && (
+                <InputAdornment position="end">
+                  <IconButton
+                    size="small"
+                    onClick={() => setSearchTerm('')}
+                    edge="end"
+                    aria-label="clear search"
+                    sx={{
+                      color: isDarkMode ? 'rgba(255, 255, 255, 0.7)' : 'rgba(0, 0, 0, 0.54)',
+                      '&:hover': {
+                        color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.87)',
+                        backgroundColor: 'transparent'
+                      }
+                    }}
+                  >
+                    <HighlightOffRoundedIcon fontSize="small" />
+                  </IconButton>
+                </InputAdornment>
+              )
+            }}
+            sx={{
+              maxWidth: '400px',
+              '& .MuiOutlinedInput-root': {
+                borderRadius: '28px',
+                backgroundColor: isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)',
+                paddingRight: searchTerm ? '8px' : '14px',
+              },
+            }}
+          />
+          {selectedDate && (
+            <span className="calendar-preview1" style={{ display: 'inline-flex', alignItems: 'center', gap: 4, marginLeft: 8 }}>
+              {selectedDate.toLocaleDateString()}
+              <button
+                className="reset-date-btn"
+                onClick={() => setSelectedDate(null)}
+                aria-label="Reset date filter"
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: 'inherit',
+                  cursor: 'pointer',
+                  padding: 0,
+                  marginLeft: 4,
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
+              >
+                <HighlightOffRoundedIcon sx={{ fontSize: 18 }} />
+              </button>
+            </span>
+          )}
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <button
+              ref={calendarButtonRef}
+              className="calendar-icon-btn"
+              onClick={() => setOpen(!open)}
+              type="button"
+              aria-label="Open calendar"
+              style={{
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                padding: 0,
+                margin: 0,
+                outline: 'none'
+              }}
+            >
+              <CalendarTodayRoundedIcon
+                color="action"
+                sx={{ fontSize: 28 }}
+                className="calendar-icon"
+              />
+            </button>
+
+            {open && (
+              <div style={{ position: 'absolute', zIndex: 9999, right: 0 }}>
+                <ReactDatePicker
+                  selected={selectedDate}
+                  onChange={date => {
+                    setSelectedDate(date);
+                    setOpen(false);
+                  }}
+                  open={open}
+                  onClickOutside={() => setOpen(false)}
+                  inline
+                  calendarClassName={isDarkMode ? 'datepicker-dark' : 'datepicker-light'}
+                  customInput={<span style={{ display: 'none' }} />}
+                  renderCustomHeader={({
+                    date,
+                    decreaseMonth,
+                    increaseMonth,
+                    prevMonthButtonDisabled,
+                    nextMonthButtonDisabled
+                  }) => (
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 1rem' }}>
+                      <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>{'<'}</button>
+                      <span>{date.toLocaleString('default', { month: 'long', year: 'numeric' })}</span>
+                      <button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>{'>'}</button>
+                    </div>
+                  )}
+                  calendarContainer={CustomCalendarContainer}
+                />
+              </div>
+            )}
+
+          </div>
+        </div>
         <div className="alerts-child">
           <ul>
             {currentAlerts.map(alert => {
@@ -354,7 +538,13 @@ function Alerts({
                     <span className="alerts-message-text">{alert.message}</span>
                     <div className="alerts-message-tags">
                       {fiberIds.map(id => (
-                        <TagFiber key={id} fiberId={id} label={`Fiber ${id}`} defaultActive={false} />
+                        <TagFiber
+                          key={id}
+                          fiberId={id}
+                          label={`Fiber ${id}`}
+                          defaultActive={false}
+                          color={getColor(id)}
+                        />
                       ))}
                     </div>
                   </div>

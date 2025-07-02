@@ -93,7 +93,6 @@ div {
   padding: 0;
 }
 
-
 .navbar {
   background-color: var(--bg-color);
   padding-top: 0.5em;
@@ -104,6 +103,7 @@ div {
   justify-content: space-between;
   align-items: center;
   align-self: stretch;
+  height: 3.5rem;
 }
 
 .navbar img {
@@ -114,8 +114,8 @@ div {
 
 .div-img {
   display: flex;
-  width: 13.62063rem;
-  height: 4.4375rem;
+
+  height: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -128,25 +128,76 @@ div {
   gap: 1.25rem;
 }
 
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+@media (max-width: 842px) {
+  .navbar {
+    justify-content: left;
+  }
+
+  .nav-pages {
+    display: none;
+  }
+
+  .div-img {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+    display: flex;
+    justify-content: left;
+  }
+}
+
+@media (max-width: 1235px) {
+  .navbar {
+    justify-content: right;
+  }
+
+  .nav-bt {
+    padding: 1.25rem 0.75rem;
+    font-size: 1.1rem;
+    min-width: 3.5rem;
+  }
+
+  .div-img {
+    display: none;
+  }
+
+  .nav-bt-text {
+    display: none;
+  }
+}
+
 .nav-bt {
   display: flex;
-  width: 16.6875rem;
-  height: 4.375rem;
-  padding: 1.25rem 3.125rem;
-  justify-content: center;
   align-items: center;
-  gap: 1.25rem;
-
+  justify-content: center;
+  min-width: 3.5rem;
+  max-width: 100%;
+  width: auto;
+  padding: 0.6rem 1.5rem;
+  gap: 0.75rem;
   border-radius: 3.125rem;
   border: none;
-
   color: var(--text-color);
   font-family: Inter;
-  font-size: 1.5625rem;
-  font-style: normal;
+  font-size: 1.25rem;
   font-weight: 700;
-  line-height: normal;
   background: none;
+  transition: all 0.3s;
+}
+
+.nav-buttons {
+  width: auto;
 }
 
 .nav-bt:not(.active):hover {
@@ -193,12 +244,12 @@ a {
   color: var(--bg-color);
 }
 
-.MuiAvatar-root.MuiAvatar-circular.css-fmeqll-MuiAvatar-root {
+.MuiAvatar-root.MuiAvatar-circular {
   width: 3rem;
   height: 3rem;
 }
 
-.nav-profile .MuiAvatar-root.MuiAvatar-circular.css-fmeqll-MuiAvatar-root:hover {
+.nav-profile .MuiAvatar-root.MuiAvatar-circular:hover {
   box-shadow: inset 0 0 0 0.1rem var(--text-color);
   cursor: pointer;
 }
@@ -230,9 +281,9 @@ a {
 }
 
 /* Add this to your map container */
-.map-container.grouped-mode {
+/*.map-container.grouped-mode {
   border: 2px solid #4a90e2;
-}
+}*/
 
 /*______________________________________*/
 
@@ -626,7 +677,7 @@ a {
   line-height: normal;
 }
 
-.overlay-profile .MuiAvatar-root.MuiAvatar-circular.css-fmeqll-MuiAvatar-root {
+.overlay-profile .MuiAvatar-root.MuiAvatar-circular {
   width: 9.40625rem;
   height: 9.40625rem;
   flex-shrink: 0;
@@ -729,6 +780,17 @@ a {
   cursor: pointer;
 }
 
+.overlay-admin {
+  margin: 0;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 0 1rem;
+  border-radius: 5rem;
+}
+
 .edit-bt-nav {
   flex: 1 1 50%
 }
@@ -804,15 +866,6 @@ a {
   font-weight: 500;
   /*box-sizing: border-box;
   box-shadow: inset 0 0 0 0.1em #252525;*/
-}
-
-.tag-fiber1:hover .dot {
-  /*width: 0.3rem;
-  height: 0.3rem;
-  height: 0.3rem;border-radius: 50%;
-
-  background-color: inherit;
-*/
 }
 
 .dot {
@@ -1017,6 +1070,7 @@ a {
   gap: 0.375rem;
   align-self: stretch;
   flex-wrap: wrap;
+  color: #F8F8FF;
 }
 
 .info-lines span {
@@ -1027,6 +1081,7 @@ a {
   font-weight: 400;
   line-height: 0.9375rem;
   /* 125% */
+  color: #F8F8FF;
 }
 
 .more-info {
@@ -1106,38 +1161,227 @@ a {
   align-self: stretch;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-  gap: 2rem;
+  gap: 0.5rem;
 
-  background: linear-gradient(#000, #000) no-repeat center/2px 100%;
+  /*background: linear-gradient(#000, #000) no-repeat center/2px 100%;*/
+}
+
+.analytics-resizer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: none;
+  height: 53.1875rem;
+  width: 15px;
+  border-radius: 10rem;
+}
+
+.analytics-resizer:hover {
+  transition: all 0.3s ease;
+  background-color: var(--card-bg);
+  cursor: ew-resize;
+  width: 15px;
+}
+
+.analytics-resizer-element {
+  height: 20%;
+  width: 50%;
+  background: linear-gradient(var(--text-color), var(--text-color)) no-repeat center/2px 100%;
 }
 
 .analytics-right {
-  width: 100%;
-  height: 100%;
+  width: auto;
   align-self: stretch;
   display: flex;
   height: 53.1875rem;
   flex-direction: column;
   align-items: flex-start;
   flex: 1 1 auto;
-
   border-radius: 1.875rem;
   background: var(--card-bg);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
+  position: relative;
+}
+
+.analytics-right .main-svg {
+  border-radius: 1.875rem;
+}
+
+.analytics-toggle {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  gap: 0.5rem;
+  display: flex;
+  width: 100%;
+  z-index: 8;
+}
+
+.analytics-toggle button {
+  font-family: Inter;
+  font-weight: 600;
+  border-radius: 5rem;
+  border: none;
+  background-color: #F8F8FF;
+  color: #252525;
+  padding: 0.3rem;
+}
+
+.analytics-toggle button:hover {
+  cursor: pointer;
+  background: #F8F8FF80;
+  box-shadow: inset 0 0 0 0.1em #F8F8FF;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.analytics-toggle .toggle-btninactive {
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.analytics-toggle .toggle-btnactive {
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.calendar-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.analytics-calendar-icon {
+  color: #252525 !important;
+  background: #F8F8FF;
+  padding: 0.3rem;
+  border-radius: 5rem;
+  height: auto !important;
+  margin: auto;
+
+}
+
+.analytics-calendar-icon:hover {
+  background: #F8F8FF80;
+}
+
+.datepicker-dark {
+  background: var(--text-color) !important;
+  color: var(--bg-color) !important;
+  border-radius: 1rem !important;
+  border: none;
+}
+
+.react-datepicker__day--today,
+.react-datepicker__month-text--today,
+.react-datepicker__quarter-text--today,
+.react-datepicker__year-text--today {
+  background: #ED6A46 !important;
+  color: var(--text-color) !important;
+  border-radius: 0.3rem !important;
+}
+
+.datepicker-light {
+  background: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  border-radius: 1rem !important;
+  border: none;
+  padding: 0.5rem;
+}
+
+.react-datepicker__header {
+  background: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  border: none !important;
+  border-radius: 1.5rem !important;
+  font-family: Inter !important;
+}
+
+.react-datepicker__day,
+.react-datepicker__month-text,
+.react-datepicker__quarter-text,
+.react-datepicker__year-text {
+  font-family: Inter !important;
+}
+
+.datepicker-light .react-datepicker__day--selected,
+.datepicker-light .react-datepicker__day--in-selecting-range,
+.datepicker-light .react-datepicker__day--in-range {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range),
+.react-datepicker__month-text--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range),
+.react-datepicker__quarter-text--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range),
+.react-datepicker__year-text--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range) {
+  background: var(--card-bg) !important;
+  color: var(--text-color) !important;
+}
+
+.reset-date-btn {
+  display: flex;
+  margin: '12px auto 4px auto';
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 1rem;
+  padding: '4px 12px';
+  font-size: 1rem;
+  cursor: 'pointer';
+  z-index: 10;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.reset-date-btn:hover {
+  box-sizing: border-box !important;
+  box-shadow: inset 0 0 0 0.1em var(--text-color) !important;
+}
+
+.calendar-preview {
+  background: #F8F8FF;
+  color: #252525;
+  border-radius: 5rem;
+  padding: 0.3rem 0.5rem;
+}
+
+.calendar-preview1 {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+  height: 100%;
+  border-radius: 5rem;
+  padding: 0.5rem 0.8rem;
+  font-weight: 600;
+}
+
+
+.analytics-right.minimized:hover {
+  background: var(--text-color) !important;
+}
+
+.analytics-right .restore-map-btn .MuiSvgIcon-root {
+  color: var(--text-color) !important;
+}
+
+
+.analytics-right:hover .restore-map-btn .MuiSvgIcon-root {
+  color: var(--bg-color) !important;
 }
 
 .analytics-left {
   display: flex;
-  width: 100%;
-  height: 100rem;
-  flex: 1 1 auto;
+  /*width: 100%;*/
+  /*height: 100rem;*/
+  height: 53.1875rem;
+  flex: none;
   flex-direction: column;
   align-items: flex-start;
-
   border-radius: 1.875rem;
   background: var(--card-bg);
   box-shadow: 4px 0px 10px 0px rgba(0, 0, 0, 0.10);
-
 }
 
 .analytics-left .bg {
@@ -1147,11 +1391,19 @@ a {
 .analytics-left .main-svg {
   border-radius: 1.875rem;
   overflow: hidden;
+
+}
+
+.analytics-left .js-plotly-plot .plotly .user-select-none .main-svg:first-of-type {
+  background-color: var(--card-bg) !important;
+  /* or whatever color you want */
 }
 
 .map-container {
+  position: relative;
   width: 100%;
   height: 100%;
+  min-height: 400px;
   border-radius: 1.875rem;
 }
 
@@ -1575,10 +1827,11 @@ a {
 
 .fiber-cards {
   display: flex;
-  width: fit-content;
+  /*width: 100%;*/
   padding: 1.875rem;
   align-items: flex-start;
   align-content: flex-start;
+  justify-content: space-between;
   gap: 1.88rem;
   flex-wrap: wrap;
   border-radius: 1.875rem;
@@ -1590,6 +1843,7 @@ a {
 
 .fiber-card {
   display: flex;
+  position: relative;
   padding: 1.875rem;
   flex-direction: column;
   align-items: flex-start;
@@ -1638,7 +1892,7 @@ a {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  width: 6.6875rem;
+  width: 100%;
 
   transition: color 0.8s ease;
 }
@@ -1657,6 +1911,7 @@ a {
 
 .card-color {
   display: flex;
+  position: relative;
   padding: 0.625rem;
   align-items: center;
   gap: 0.625rem;
@@ -1665,6 +1920,15 @@ a {
   color: var(--card-bg);
 
   transition: color 0.8s ease;
+}
+
+.color-picker-popover {
+  position: absolute;
+  top: 100%;
+  /* or adjust as needed */
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .card-color2 {
@@ -1706,8 +1970,8 @@ a {
   gap: 0.625rem;
   flex: 1 0 0;
   border-radius: 0.5rem;
-  background: var(--text-color);
-  color: var(--card-bg);
+  background: #ED6A46;
+  color: #F8F8FF;
   text-align: center;
   font-family: Inter;
   font-size: 0.9375rem;
@@ -1723,7 +1987,7 @@ a {
 .card-delete:hover {
   background: none;
   box-sizing: border-box;
-  box-shadow: inset 0 0 0 0.1em var(--text-color);
+  box-shadow: inset 0 0 0 0.1em #ED6A46;
   color: var(--text-color);
   cursor: pointer;
   transition: ease 0.3s;
@@ -1981,8 +2245,11 @@ a {
   background: none;
 }
 
+.theme-toggle-container {}
+
 .theme-toggle-container-child {
   display: flex;
+  position: relative;
   flex-direction: row;
   gap: 1.25rem;
 }
@@ -2053,14 +2320,14 @@ a {
 .alert-threshold-input input {
   display: flex;
   width: 3.375rem;
-  padding: 0.625rem 1.25rem;
-
+  padding: 0.625rem;
+  border: none;
   border-radius: 0.625rem;
-  background: var(--text-color);
+  background: var(--card-bg);
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.05);
   text-align: center;
 
-  color: var(--bg-color);
+  color: var(--text-color);
   font-family: Inter;
   font-size: 0.9375rem;
   font-style: normal;
@@ -2237,6 +2504,54 @@ a {
   color: #f8f8ff;
 }
 
+.profile-cards {
+  display: flex;
+  /*width: 100%;*/
+  padding: 1.875rem;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: space-between;
+  gap: 1.88rem;
+  flex-wrap: wrap;
+  border-radius: 1.875rem;
+  background: var(--bg-color);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.05);
+
+  transition: background-color 0.8s ease;
+}
+
+.profile-card {
+  box-sizing: border-box;
+  display: flex;
+  padding: 1.875rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.875rem;
+  border-radius: 1.25rem;
+  border: 5px solid var(--text-color);
+  background: var(--card-bg);
+  width: 21.25rem;
+  height: 23.625rem;
+  transition: background-color 0.8s ease;
+}
+
+.image-container {
+  width: 100%;
+  height: 200px;
+  /* or any fixed height you want */
+  overflow: hidden;
+  border-radius: 0.625rem;
+  /* optional for rounded corners */
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* ensures the image fills the box and crops excess */
+  display: block;
+}
+
 /*=======================================================================================*/
 /*====================================_Alerts PAGE_====================================*/
 
@@ -2257,13 +2572,46 @@ a {
 
 .alerts-head {
   display: flex;
-  padding: 1.875rem 3.125rem 1.25rem 0rem;
-  flex-direction: column;
-  align-items: flex-start;
+  padding: 1.25rem 1.875rem;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
   gap: 0.9375rem;
   align-self: stretch;
   border-radius: 1.875rem 1.875rem 0rem 0rem;
   background: var(--card-bg);
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--text-color) !important;
+  /* Your color */
+  border-width: 2px;
+}
+
+.datepicker-actionbar-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  color: var(--bg-color) !important;
+  background-color: var(--text-color) !important;
+  border: none !important;
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.datepicker-actionbar-bottom svg.MuiSvgIcon-root {
+  fill: var(--bg-color);
+}
+
+.MuiDialogContent-root {
+  padding-bottom: 3rem !important;
+  position: relative;
+}
+
+.calendar-icon {
+  padding: 0;
+  color: var(--text-color) !important;
 }
 
 .alerts-child {
@@ -2386,7 +2734,6 @@ a {
   margin: 0 1rem;
 }
 
-.fixed.top-4.right-4 {}
 
 @keyframes fadeIn {
   from {
@@ -2413,8 +2760,42 @@ a {
   border-radius: 1.875rem;
   background: var(--card-bg);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
-  margin: auto;
-  width: 55rem;
+  margin: auto auto;
+  width: fit-content;
+
+}
+
+.profile-left-left {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 1rem;
+}
+
+.profile-left-left button {
+  margin: 0;
+  font-family: Inter;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-color);
+  background: none;
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.view-button:hover {
+  box-sizing: border-box;
+  box-shadow: inset 0 0 0 0.1em var(--text-color);
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+
+.view-button.active {
+  background: var(--text-color);
+  color: var(--bg-color);
+  cursor: default;
+  ;
 }
 
 .profile-child1 {
@@ -2422,17 +2803,18 @@ a {
   flex-direction: row;
   align-items: center;
   gap: 3.125rem;
+  min-height: 31.25rem;
 }
 
 .profile-left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.3125rem;
+  gap: 1.25rem;
   align-self: stretch;
 }
 
-.profile-left .MuiAvatar-root.MuiAvatar-circular.css-fmeqll-MuiAvatar-root {
+.profile-left .MuiAvatar-root.MuiAvatar-circular {
   width: 9.40625rem;
   height: 9.40625rem;
   flex-shrink: 0;
@@ -2452,6 +2834,7 @@ a {
   gap: 0.625rem;
   border-radius: 0.625rem;
   border: none;
+  background-color: var(--text-color);
   color: var(--bg-color);
 }
 
@@ -2464,10 +2847,49 @@ a {
   line-height: normal;
 }
 
+.profile-left p {
+  color: var(--text-color);
+  font-family: Inter;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 0;
+}
+
+.profile-left-picture {
+  margin: 0 auto;
+}
+
 .profile-right-child {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  gap: 1.25rem;
+}
+
+.profile-right-child p {
+  margin-top: 0;
+}
+
+.password-form {
+  gap: 3.125rem;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.password-form .profile-right {
+  gap: 1.25rem;
+  flex: 1;
+
+}
+
+.password-form .profile-left,
+.password-form .profile-right {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
   gap: 1.25rem;
 }
 
@@ -2542,6 +2964,7 @@ a {
 .profile-parent input:invalid {
   box-shadow: inset 0 0 0 0.2em #ff4444;
 }
+
 .profile-parent .invalid {
   box-shadow: inset 0 0 0 0.2em #ff4444;
 }
@@ -2567,6 +2990,7 @@ a {
 
 .login-parent {
   display: flex;
+
   width: 95rem;
   margin: auto auto;
 
@@ -2575,11 +2999,84 @@ a {
 }
 
 .login-left {
+  width: 560px;
+  min-width: 320px;
+  height: 686px;
+  min-height: 400px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   border-radius: 3.125rem 0rem 0rem 3.125rem;
   background-color: black;
+  overflow: hidden;
+  align-items: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+@keyframes gradient-move {
+  0% {
+    left: 20px;
+    top: -80px;
+    transform: rotate(18deg) scale(1);
+  }
+
+  15% {
+    left: 350px;
+    top: 30px;
+    transform: rotate(25deg) scale(1.08);
+  }
+
+  30% {
+    left: 200px;
+    top: 200px;
+    transform: rotate(15deg) scale(1.03);
+  }
+
+  45% {
+    left: 480px;
+    top: 100px;
+    transform: rotate(28deg) scale(1.12);
+  }
+
+  60% {
+    left: 100px;
+    top: 300px;
+    transform: rotate(22deg) scale(1.05);
+  }
+
+  75% {
+    left: 400px;
+    top: 400px;
+    transform: rotate(30deg) scale(1.1);
+  }
+
+  90% {
+    left: 250px;
+    top: 50px;
+    transform: rotate(20deg) scale(1.02);
+  }
+
+  100% {
+    left: 20px;
+    top: -80px;
+    transform: rotate(18deg) scale(1);
+  }
+}
+
+.login-gradient-animated {
+  position: absolute;
+  top: -112px;
+  left: 115.64px;
+  width: 325.28px;
+  height: 568.98px;
+  border-radius: 50px;
+  background: linear-gradient(180deg, #99CA8D 0%, #9747FF 100%);
+  filter: blur(100px);
+  box-shadow: 200px 200px 200px;
+  transform: rotate(20deg);
+  transform-origin: top left;
+  animation: gradient-move 30s ease-in-out infinite;
 }
 
 .login-right {
@@ -2633,6 +3130,11 @@ a {
   border: 0.5px solid var(--text-color);
   border: none;
   box-sizing: border-box;
+  background: var(--bg-color);
+}
+
+input.invalid {
+  box-shadow: inset 0 0 0 0.2em #ff4444;
 }
 
 .login-right-form-inputs {
@@ -2673,6 +3175,95 @@ a {
 .login-right-form-control-link {
   color: var(--text-color);
   text-decoration: none;
+}
+
+/*=======================================================================================*/
+
+/*====================================_LOGIN PAGE_====================================*/
+
+.fiber-modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.62rem;
+}
+
+.fiber-modal-content input {
+  display: flex;
+  width: 10.9375rem;
+  height: 2.8125rem;
+  padding: 0rem 0.625rem;
+  align-items: center;
+  gap: 0.625rem;
+  flex-shrink: 0;
+  border-radius: 0.625rem;
+  background: var(--hover, #D9D9D9);
+  border: none;
+}
+
+.fiber-modal-content .create-account-line {
+  display: flex;
+  flex-direction: row;
+  gap: 0.62rem;
+}
+
+.fiber-modal-content .modal-buttons {
+  margin-top: 1.875rem;
+}
+
+.fiber-modal-content .create-cancel-bt {
+  display: flex;
+  width: 100%;
+  height: 2.8125rem;
+  padding: 0rem 1.25rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.625rem;
+  background: #ED6A46;
+  color: var(--title, #252525);
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: none;
+}
+
+.fiber-modal-content .create-cancel-bt:hover {
+  cursor: pointer;
+  color: var(--text-color);
+  border: 3px solid var(--text, #ED6A46);
+  transition: ease 0.3s;
+  background: none;
+}
+
+.fiber-modal-content .create-create-bt {
+  display: flex;
+  width: 100%;
+  height: 2.8125rem;
+  padding: 0rem 1.25rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.625rem;
+  background: var(--highlight, #99CA8D);
+  color: var(--title, #252525);
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: none;
+}
+
+.fiber-modal-content .create-create-bt:hover {
+  cursor: pointer;
+  color: var(--text-color);
+  border: 3px solid var(--text, #99CA8D);
+  transition: ease 0.3s;
+  background: none;
 }
 
 /*=======================================================================================*/

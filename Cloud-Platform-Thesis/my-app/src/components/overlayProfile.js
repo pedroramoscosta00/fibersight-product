@@ -1,18 +1,26 @@
 import '../App.css';
 import UserIcon from '../resources/profile.png'
 import { useAuth } from '../hooks/useAuth';
+import { useRef, useEffect, useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 //Material UI
 import Avatar from '@mui/material/Avatar';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
-import { useRef, useEffect } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
 
 function OverlayProfile({ isOpen, onClose }) {
     const { user, logout } = useAuth();
     const navigate = useNavigate();
     const overlayRef = useRef(null);
+
+    const isAdmin = Array.isArray(user?.isadmin) && user.isadmin.includes('admin');
+
+    const profilePicture = user?.profilepicture?.url
+        ? `${user.profilepicture.url}?t=${Date.now()}`
+        : UserIcon;
+
+
 
     const handleLogout = () => {
         logout();
@@ -38,10 +46,23 @@ function OverlayProfile({ isOpen, onClose }) {
         };
     }, [isOpen, onClose]);
 
-    if (!user) {
+    /*if (!user) {
         console.warn('OverlayProfile rendered without user');
         return null;
-    };
+    };*/
+
+    if (!user) {
+        return (
+            isOpen && (
+                <div className='overlay-profile' ref={overlayRef}>
+                    <div className='overlay-profile-head'>
+                        <Avatar alt="User icon" src={UserIcon} />
+                        <h1>Loading...</h1>
+                    </div>
+                </div>
+            )
+        );
+    }
 
     return (
         <>
@@ -49,8 +70,14 @@ function OverlayProfile({ isOpen, onClose }) {
                 isOpen ? (
                     <div className='overlay-profile' ref={overlayRef}>
                         <div className='overlay-profile-head'>
-                            <Avatar alt="User icon" src={UserIcon} />
+                            <Avatar
+                                alt="User icon"
+                                src={profilePicture}
+                            />
                             <h1>Hello, {user.firstname}</h1>
+                            {isAdmin && (
+                                <p className='overlay-admin'>Admin</p>
+                            )}
                         </div>
                         <div className='profile-overlay-parent'>
                             <div className='profile-overlay-child1'>

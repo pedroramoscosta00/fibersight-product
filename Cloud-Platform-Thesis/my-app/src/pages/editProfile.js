@@ -14,7 +14,7 @@ import EditRoundedIcon from '@mui/icons-material/EditRounded';
 
 function EditProfile() {
     const { showAlert } = useMuiAlert();
-    const { user } = useAuth();
+    const { user, updateUserData } = useAuth();
     const navigate = useNavigate();
     const [isUploading, setIsUploading] = useState(false);
 
@@ -35,6 +35,22 @@ function EditProfile() {
     const [hasChanges, setHasChanges] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isFormValid, setIsFormValid] = useState(true);
+
+    const [activeView, setActiveView] = useState('profile');
+
+    const [passwordData, setPasswordData] = useState({
+        currentPassword: '',
+        newPassword: '',
+        confirmPassword: ''
+    });
+    const [passwordErrors, setPasswordErrors] = useState({
+        currentPassword: '',
+        newPassword: '',
+        confirmPassword: '',
+        form: '' // For general form errors
+    });
+    const [hasPasswordChanges, setHasPasswordChanges] = useState(false);
+    const [editingPasswordField, setEditingPasswordField] = useState('');
 
     // Load profile on mount
     useEffect(() => {
@@ -92,7 +108,7 @@ function EditProfile() {
             const formData = new FormData();
             formData.append('media', file);
 
-            const response = await fetch('http://localhost:5000/api/upload-media', {
+            const response = await fetch('http://localhost:5000/upload-media', {
                 method: 'POST',
                 body: formData,
             });
@@ -178,35 +194,32 @@ function EditProfile() {
     }, [formData, errors]);
 
     const handleSave = async () => {
-        if (!validateForm()) return;
+        if (activeView === 'password') {
+            await handlePasswordUpdate();
+        } else {
+            if (!validateForm()) return;
 
-        setIsSubmitting(true);
-        try {
-            const result = await saveCosmicProfile(user.slug, formData);
+            setIsSubmitting(true);
+            try {
+                const result = await saveCosmicProfile(user.slug, formData);
 
-            if (result.success) {
-                setOriginalData({ ...formData });
-                showAlert('Profile updated successfully', 'success');
+                if (result.success) {
+                    setOriginalData({ ...formData });
+                    await updateUserData(user.slug);
+                    showAlert('Profile updated successfully', 'success');
+                    setShowSaveConfirm(false);
+                } else {
+                    throw new Error(result.message || 'Failed to update profile');
+                }
+            } catch (error) {
+                console.error('Save error:', error);
+                showAlert(error.message || 'Failed to update profile', 'error');
+            } finally {
+                setIsSubmitting(false);
                 setShowSaveConfirm(false);
-            } else {
-                throw new Error(result.message || 'Failed to update profile');
             }
-        } catch (error) {
-            console.error('Save error:', error);
-            showAlert(error.message || 'Failed to update profile', 'error');
-        } finally {
-            setIsSubmitting(false);
-            setShowSaveConfirm(false);
         }
     };
-
-    /*const handleCancel = () => {
-        if (hasChanges) {
-            setShowCancelConfirm(true);
-        } else {
-            navigate(-1);
-        }
-    };*/
 
     const resetForm = () => {
         setFormData(originalData);
@@ -216,7 +229,6 @@ function EditProfile() {
     }
 
     const renderField = (label, name, type = 'text') => {
-        //console.log(`Rendering field: ${name}, type: ${type}`);
         const isInvalid = type !== 'file' && !formData[name]?.trim();
 
         return (
@@ -225,12 +237,12 @@ function EditProfile() {
                 {editingField === name ? (
                     type === 'file' ? (
                         <>
-                            {console.log('Rendering file input for:', name)}
                             <input
                                 type="file"
                                 name={name}
                                 onChange={(e) => handleFileChange(e, name)}
                                 autoFocus
+
                                 accept='image/*'
                             />
                         </>
@@ -255,14 +267,13 @@ function EditProfile() {
                         {type === 'file' ? (
                             // Handle profile picture display
                             <span>
-                                {typeof formData[name] === 'object'
-                                    ? formData[name].url
-                                    : formData[name] || 'Click to upload picture'}
+                                {'Click to change picture'}
                             </span>
                         ) : (
                             // Handle other fields
                             formData[name] || <span className="placeholder-text">Click to edit</span>
-                        )}                        <EditRoundedIcon />
+                        )}
+                        <EditRoundedIcon />
                     </div>
                 )}
                 {errors[name] && <span className="form-error">{errors[name]}</span>}
@@ -284,70 +295,373 @@ function EditProfile() {
         testProfileFetch();
     }, [user.slug]);
 
+    const handleViewChange = (view) => {
+        setActiveView(view);
+        setEditingField('');
+        setErrors({});
+
+        if (view === 'profile') {
+            setPasswordData({
+                currentPassword: '',
+                newPassword: '',
+                confirmPassword: ''
+            });
+            setPasswordErrors({});
+            setHasPasswordChanges(false);
+        } else if (view === 'password') {
+            setFormData(originalData);
+            setErrors({});
+            setHasChanges(false);
+        }
+    };
+    const renderButtons = () => (
+        <div className="profile-left-left">
+            <button
+                type="button"
+                onClick={() => handleViewChange('profile')}
+                className={`view-button ${activeView === 'profile' ? 'active' : ''}`}
+            >
+                Edit Profile Details
+            </button>
+            <button
+                type="button"
+                onClick={() => handleViewChange('password')}
+                className={`view-button ${activeView === 'password' ? 'active' : ''}`}
+            >
+                Change Password
+            </button>
+        </div>
+    );
+
+    const renderSaveCancelButtons = () => {
+        // Show buttons when:
+        // - In profile view with changes and valid form
+        // - In password view with any password field filled
+        const showButtons =
+            (activeView === 'profile' && hasChanges && isFormValid) ||
+            (activeView === 'password' && (
+                passwordData.currentPassword ||
+                passwordData.newPassword ||
+                passwordData.confirmPassword
+            ));
+
+        if (!showButtons) return null;
+
+        const handleSaveClick = () => {
+            if (activeView === 'profile') {
+                if (!validateForm()) {
+                    showAlert('Please fix the errors before saving.', 'error');
+                    return;
+                }
+            } else if (activeView === 'password') {
+                if (!validatePasswordForm()) {
+                    showAlert('Please fix the errors before saving.', 'error');
+                    return;
+                }
+            }
+
+            setShowSaveConfirm(true);
+        };
+
+        return (
+            <div className="profile-child2">
+                <button
+                    className="profile-cancel-bt"
+                    onClick={() => {
+                        if (activeView === 'profile') {
+                            resetForm();
+                        } else if (activeView === 'password') {
+                            setPasswordData({
+                                currentPassword: '',
+                                newPassword: '',
+                                confirmPassword: ''
+                            });
+                            setPasswordErrors({});
+                            setHasPasswordChanges(false);
+                        }
+                    }}
+                    disabled={isSubmitting}
+                >
+                    Cancel <CancelRoundedIcon />
+                </button>
+                <button
+                    className="profile-save-bt"
+                    onClick={handleSaveClick}
+                    disabled={isSubmitting}
+                >
+                    {isSubmitting ? <CircularProgress size={20} /> : <>Save <CheckRoundedIcon /></>}
+                </button>
+            </div>
+        );
+    };
+
+    const validatePasswordForm = () => {
+        let isValid = true;
+        const newErrors = {
+            currentPassword: '',
+            newPassword: '',
+            confirmPassword: '',
+            form: ''
+        };
+
+        // Basic validation
+        if (!passwordData.currentPassword) {
+            newErrors.currentPassword = 'Current password is required';
+            isValid = false;
+        }
+
+        if (!passwordData.newPassword) {
+            newErrors.newPassword = 'New password is required';
+            isValid = false;
+        } else if (passwordData.newPassword.length < 8) {
+            newErrors.newPassword = 'Password must be at least 8 characters';
+            isValid = false;
+        }
+
+        if (passwordData.newPassword !== passwordData.confirmPassword) {
+            newErrors.confirmPassword = 'Passwords do not match';
+            isValid = false;
+        }
+
+        setPasswordErrors(newErrors);
+        return isValid;
+    };
+
+    const handlePasswordUpdate = async () => {
+        // Clear previous errors
+        setPasswordErrors({
+            currentPassword: '',
+            newPassword: '',
+            confirmPassword: '',
+            form: ''
+        });
+
+        // Validate form locally first
+        if (!validatePasswordForm()) {
+            return;
+        }
+
+        setIsSubmitting(true);
+
+        try {
+            const response = await fetch('http://localhost:5000/update-password', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    slug: user.slug, // Send user ID instead of slug
+                    currentPassword: passwordData.currentPassword,
+                    newPassword: passwordData.newPassword
+                }),
+                credentials: 'include' // If using cookies
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                // Handle specific error cases
+                if (response.status === 401) {
+                    throw new Error('Current password is incorrect');
+                }
+                throw new Error(data.message || 'Failed to update password');
+            }
+
+            // Success case
+            showAlert('Password updated successfully', 'success');
+            setPasswordData({
+                currentPassword: '',
+                newPassword: '',
+                confirmPassword: ''
+            });
+            setActiveView('profile');
+            setShowSaveConfirm(false);
+        } catch (error) {
+            console.error('Password update error:', error);
+
+            // Set appropriate error message
+            if (error.message.includes('Current password')) {
+                setPasswordErrors(prev => ({
+                    ...prev,
+                    currentPassword: error.message
+                }));
+            } else {
+                setPasswordErrors(prev => ({
+                    ...prev,
+                    form: error.message
+                }));
+            }
+
+            showAlert(error.message || 'Failed to update password', 'error');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+    const handlePasswordChange = (field, value) => {
+        setPasswordData(prev => ({
+            ...prev,
+            [field]: value
+        }));
+
+        // Clear error when typing starts
+        if (field === 'currentPassword') {
+            setPasswordErrors(prev => ({
+                ...prev,
+                currentPassword: ''
+            }));
+        }
+
+        // Check if all password fields have values to determine if changes exist
+        const allFieldsFilled = (
+            passwordData.currentPassword.trim() ||
+            passwordData.newPassword.trim() ||
+            passwordData.confirmPassword.trim()
+        );
+
+        setHasPasswordChanges(allFieldsFilled);
+    };
+
+    /*const handlePasswordBlur = async (field) => {
+        if (field === 'currentPassword' && passwordData.currentPassword) {
+            try {
+                const profile = await getCosmicProfile(user.slug);
+
+                console.log('Fetched password from profile:', profile.password);
+                console.log('Entered current password:', passwordData.currentPassword);
+
+                // Compare the entered password with the one in the database
+                if (profile.password === passwordData.currentPassword) {
+                    console.log('Password match: true');
+                    // Clear the error if the password matches
+                    setPasswordErrors(prev => ({
+                        ...prev,
+                        currentPassword: ''
+                    }));
+                } else {
+                    console.log('Password match: false');
+                    // Set an error if the password does not match
+                    setPasswordErrors(prev => ({
+                        ...prev,
+                        currentPassword: 'Current password is incorrect'
+                    }));
+                }
+            } catch (error) {
+                console.error('Error validating current password:', error);
+                setPasswordErrors(prev => ({
+                    ...prev,
+                    currentPassword: 'Error validating password'
+                }));
+            }
+        }
+    };*/
+
+    const handlePasswordBlur = (field) => {
+        if (field === 'currentPassword' && !passwordData.currentPassword) {
+            setPasswordErrors(prev => ({
+                ...prev,
+                currentPassword: 'Current password is required'
+            }));
+        }
+        // Do NOT fetch the profile or compare the password here!
+    };
+
+    // Add this helper function
+    const renderPasswordField = (label, name) => (
+        <div className={`profile-${name}`}>
+            <p>{label}</p>
+            {editingPasswordField === name ? (
+                <input
+                    type="password"
+                    value={passwordData[name]}
+                    onChange={e => handlePasswordChange(name, e.target.value)}
+                    onBlur={() => setEditingPasswordField('')}
+                    autoFocus
+                    className={passwordErrors[name] ? 'invalid' : ''}
+                />
+            ) : (
+                <div
+                    className="editable-label"
+                    onClick={() => setEditingPasswordField(name)}
+                >
+                    <span className="placeholder-text">Click to edit</span>
+                    <EditRoundedIcon />
+                </div>
+            )}
+            {passwordErrors[name] && (
+                <span className="form-error">{passwordErrors[name]}</span>
+            )}
+        </div>
+    );
+
+    const renderPasswordForm = () => (
+        <div className="password-form">
+            {passwordErrors.form && (
+                <div className="form-error-message">
+                    {passwordErrors.form}
+                </div>
+            )}
+
+            <div className="profile-right">
+                <div className="profile-right-child">
+                    {renderPasswordField('Current Password', 'currentPassword')}
+                </div>
+                <div className="profile-right-child">
+                    {renderPasswordField('New Password', 'newPassword')}
+                    {renderPasswordField('Confirm New Password', 'confirmPassword')}
+                </div>
+            </div>
+        </div>
+    );
+
 
     return (
         <>
-            <form onSubmit={(e) => {
-                e.preventDefault();
-                //setShowSaveConfirm(true);
-            }}>
+            <form onSubmit={(e) => e.preventDefault()}>
                 <div className="profile-parent">
                     <div className="profile-child1">
-                        <div className="profile-left">
-                            <Avatar alt="Profile Picture"
-                                src={
-                                    formData.profilePicture?.url || // First check for object with url
-                                    formData.profilePicture || // Then check for direct URL string
-                                    UserIcon // Fallback to default
-                                }
-                            />
-
-                            {renderField('Profile Picture', 'profilePicture', 'file')}
-                            {isUploading && <CircularProgress size={20} />}
-                        </div>
-                        <div className="profile-right">
-                            <div className="profile-right-child">
-                                <div className="profile-firstname">
-                                    {renderField('First Name', 'firstName')}
-
+                        {renderButtons()}
+                        {activeView === 'profile' ? (
+                            <>
+                                <div className="profile-left">
+                                    <p>Profile Picture</p>
+                                    <Avatar
+                                        alt="Profile Picture"
+                                        src={
+                                            formData.profilePicture?.url ||
+                                            formData.profilePicture ||
+                                            UserIcon
+                                        }
+                                        className="profile-left-picture"
+                                    />
+                                    {renderField('', 'profilePicture', 'file')}
+                                    {isUploading && <CircularProgress size={20} />}
                                 </div>
-                                <div className="profile-lastname">
-                                    {renderField('Last Name', 'lastName')}
+                                <div className="profile-right">
+                                    <div className="profile-right-child">
+                                        <div className="profile-firstname">
+                                            {renderField('First Name', 'firstName')}
+                                        </div>
+                                        <div className="profile-lastname">
+                                            {renderField('Last Name', 'lastName')}
+                                        </div>
+                                        <div className="profile-email">
+                                            {renderField('Email Address', 'email')}
+                                        </div>
+                                        <div className="profile-phone">
+                                            {renderField('Phone', 'phone')}
+                                        </div>
+                                        <div className="profile-position">
+                                            {renderField('Position', 'position')}
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="profile-right-child">
-                                <div className="profile-email">
-                                    {renderField('Email Address', 'email')}
-                                </div>
-                                <div className="profile-phone">
-                                    {renderField('Phone', 'phone')}
-                                </div>
-                            </div>
-                            <div className="profile-right-child">
-                                <div className="profile-position">
-                                    {renderField('Position', 'position')}
-                                </div>
-                            </div>
-                        </div>
+                            </>
+                        ) : (
+                            renderPasswordForm()
+                        )}
                     </div>
-                    {hasChanges && isFormValid && (
-                        <div className="profile-child2">
-                            <button
-                                className="profile-cancel-bt"
-                                onClick={resetForm}
-                                disabled={isSubmitting}
-                            >
-                                Cancel <CancelRoundedIcon />
-                            </button>
-                            <button
-                                className="profile-save-bt"
-                                onClick={() => setShowSaveConfirm(true)}
-                                disabled={!hasChanges || isSubmitting}
-                            >
-                                {isSubmitting ? <CircularProgress size={20} /> : <>Save <CheckRoundedIcon /></>}
-                            </button>
-                        </div>
-                    )}
+                    {renderSaveCancelButtons()}
                 </div>
             </form>
 
@@ -367,7 +681,7 @@ function EditProfile() {
                 </div>
             )}
         </>
-    )
+    );
 }
 
 export { EditProfile };

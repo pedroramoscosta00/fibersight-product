@@ -20,9 +20,9 @@ function FiberToggles({ onTagClick }) {
                         onClick={() => setMinimize(!minimize)}
                     />
                 </span>
-                <TagFiber fiberId={1} label="Fiber 1" defaultActive={true} onClick={onTagClick} />
-                <TagFiber fiberId={2} label="Fiber 2" defaultActive={true} onClick={onTagClick} />
-                <TagFiber fiberId={3} label="Fiber 3" defaultActive={true} onClick={onTagClick} />
+                <TagFiber fiberId="system1" label="Fiber 1" defaultActive={true} onClick={onTagClick} />
+                <TagFiber fiberId="system2" label="Fiber 2" defaultActive={true} onClick={onTagClick} />
+                <TagFiber fiberId="system3" label="Fiber 3" defaultActive={true} onClick={onTagClick} />
             </div>
 
             <div className={`fiber-toggles-minimized ${minimize ? 'visible' : 'hidden'}`}>

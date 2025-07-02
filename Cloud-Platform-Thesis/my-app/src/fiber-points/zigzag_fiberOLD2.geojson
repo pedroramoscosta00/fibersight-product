@@ -1,0 +1,2705 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 8.0,
+            "moisture": 9.98
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 8.17,
+            "moisture": 9.97
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 8.67,
+            "moisture": 10.18
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 9.46,
+            "moisture": 10.1
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 10.5,
+            "moisture": 10.0
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 11.71,
+            "moisture": 10.22
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 13.0,
+            "moisture": 9.99
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 14.29,
+            "moisture": 10.02
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 15.5,
+            "moisture": 10.21
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 16.54,
+            "moisture": 9.88
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 17.33,
+            "moisture": 9.89
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 17.83,
+            "moisture": 9.86
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 18.0,
+            "moisture": 10.15
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 17.83,
+            "moisture": 10.02
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 17.33,
+            "moisture": 10.12
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 16.54,
+            "moisture": 10.21
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 15.5,
+            "moisture": 9.93
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 14.29,
+            "moisture": 10.08
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 13.0,
+            "moisture": 10.05
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 11.71,
+            "moisture": 10.12
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 10.5,
+            "moisture": 9.97
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 9.46,
+            "moisture": 10.2
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 8.67,
+            "moisture": 10.08
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 8.17,
+            "moisture": 10.08
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.793828980860348,
+          37.93418226081392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 9.0,
+            "moisture": 9.92
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 9.17,
+            "moisture": 9.91
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 9.67,
+            "moisture": 10.12
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 10.46,
+            "moisture": 10.03
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 11.5,
+            "moisture": 9.93
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 12.71,
+            "moisture": 10.15
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 14.0,
+            "moisture": 9.92
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 15.29,
+            "moisture": 9.95
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 16.5,
+            "moisture": 10.15
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 17.54,
+            "moisture": 9.82
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 18.33,
+            "moisture": 9.82
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 18.83,
+            "moisture": 9.8
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 19.0,
+            "moisture": 10.09
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 18.83,
+            "moisture": 9.95
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 18.33,
+            "moisture": 10.05
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 17.54,
+            "moisture": 10.15
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 16.5,
+            "moisture": 9.87
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 15.29,
+            "moisture": 10.01
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 14.0,
+            "moisture": 9.98
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 12.71,
+            "moisture": 10.05
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 11.5,
+            "moisture": 9.91
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 10.46,
+            "moisture": 10.14
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 9.67,
+            "moisture": 10.02
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 9.17,
+            "moisture": 10.02
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.793328980860348,
+          37.93418226081392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 10.0,
+            "moisture": 9.89
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 10.17,
+            "moisture": 9.88
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 10.67,
+            "moisture": 10.09
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 11.46,
+            "moisture": 10.0
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 12.5,
+            "moisture": 9.9
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 13.71,
+            "moisture": 10.12
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 15.0,
+            "moisture": 9.89
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 16.29,
+            "moisture": 9.92
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 17.5,
+            "moisture": 10.12
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 18.54,
+            "moisture": 9.79
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 19.33,
+            "moisture": 9.79
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 19.83,
+            "moisture": 9.77
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 20.0,
+            "moisture": 10.06
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 19.83,
+            "moisture": 9.92
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 19.33,
+            "moisture": 10.02
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 18.54,
+            "moisture": 10.12
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 17.5,
+            "moisture": 9.84
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 16.29,
+            "moisture": 9.98
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 15.0,
+            "moisture": 9.95
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 13.71,
+            "moisture": 10.02
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 12.5,
+            "moisture": 9.88
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 11.46,
+            "moisture": 10.11
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 10.67,
+            "moisture": 9.99
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 10.17,
+            "moisture": 9.99
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.792828980860349,
+          37.93418226081392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 4,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 9.0,
+            "moisture": 10.14
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 9.17,
+            "moisture": 10.15
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 9.67,
+            "moisture": 10.44
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 10.46,
+            "moisture": 10.27
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 11.5,
+            "moisture": 10.11
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 12.71,
+            "moisture": 10.34
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 14.0,
+            "moisture": 10.31
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 15.29,
+            "moisture": 10.29
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 16.5,
+            "moisture": 10.23
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 17.54,
+            "moisture": 10.43
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 18.33,
+            "moisture": 10.17
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 18.83,
+            "moisture": 10.31
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 19.0,
+            "moisture": 10.21
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 18.83,
+            "moisture": 10.41
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 18.33,
+            "moisture": 10.4
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 17.54,
+            "moisture": 10.21
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 16.5,
+            "moisture": 10.27
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 15.29,
+            "moisture": 10.18
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 14.0,
+            "moisture": 10.08
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 12.71,
+            "moisture": 10.13
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 11.5,
+            "moisture": 10.37
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 10.46,
+            "moisture": 10.12
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 9.67,
+            "moisture": 10.07
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 9.17,
+            "moisture": 10.05
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.794328980860348,
+          37.934459418791256
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 5,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 9.67,
+            "moisture": 10.15
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 9.84,
+            "moisture": 10.16
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 10.34,
+            "moisture": 10.46
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 11.13,
+            "moisture": 10.28
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 12.17,
+            "moisture": 10.13
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 13.37,
+            "moisture": 10.36
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 14.67,
+            "moisture": 10.33
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 15.96,
+            "moisture": 10.3
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 17.17,
+            "moisture": 10.24
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 18.2,
+            "moisture": 10.44
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 19.0,
+            "moisture": 10.19
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 19.5,
+            "moisture": 10.32
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 19.67,
+            "moisture": 10.22
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 19.5,
+            "moisture": 10.43
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 19.0,
+            "moisture": 10.41
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 18.2,
+            "moisture": 10.22
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 17.17,
+            "moisture": 10.28
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 15.96,
+            "moisture": 10.2
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 14.67,
+            "moisture": 10.09
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 13.37,
+            "moisture": 10.14
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 12.17,
+            "moisture": 10.38
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 11.13,
+            "moisture": 10.14
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 10.34,
+            "moisture": 10.08
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 9.84,
+            "moisture": 10.06
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.793828980860348,
+          37.934459418791256
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 10.33,
+            "moisture": 10.18
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 10.5,
+            "moisture": 10.19
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 11.0,
+            "moisture": 10.48
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 11.8,
+            "moisture": 10.31
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 12.83,
+            "moisture": 10.16
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 14.04,
+            "moisture": 10.38
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 15.33,
+            "moisture": 10.35
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 16.63,
+            "moisture": 10.33
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 17.83,
+            "moisture": 10.27
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 18.87,
+            "moisture": 10.47
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 19.66,
+            "moisture": 10.21
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 20.16,
+            "moisture": 10.35
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 20.33,
+            "moisture": 10.25
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 20.16,
+            "moisture": 10.45
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 19.66,
+            "moisture": 10.44
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 18.87,
+            "moisture": 10.25
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 17.83,
+            "moisture": 10.31
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 16.63,
+            "moisture": 10.22
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 15.33,
+            "moisture": 10.12
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 14.04,
+            "moisture": 10.17
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 12.83,
+            "moisture": 10.41
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 11.8,
+            "moisture": 10.17
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 11.0,
+            "moisture": 10.11
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 10.5,
+            "moisture": 10.09
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.793328980860348,
+          37.934459418791256
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 11.0,
+            "moisture": 10.24
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 11.17,
+            "moisture": 10.25
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 11.67,
+            "moisture": 10.55
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 12.46,
+            "moisture": 10.37
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 13.5,
+            "moisture": 10.22
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 14.71,
+            "moisture": 10.45
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 16.0,
+            "moisture": 10.42
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 17.29,
+            "moisture": 10.39
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 18.5,
+            "moisture": 10.33
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 19.54,
+            "moisture": 10.53
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 20.33,
+            "moisture": 10.28
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 20.83,
+            "moisture": 10.42
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 21.0,
+            "moisture": 10.32
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 20.83,
+            "moisture": 10.52
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 20.33,
+            "moisture": 10.5
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 19.54,
+            "moisture": 10.31
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 18.5,
+            "moisture": 10.37
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 17.29,
+            "moisture": 10.29
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 16.0,
+            "moisture": 10.19
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 14.71,
+            "moisture": 10.23
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 13.5,
+            "moisture": 10.47
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 12.46,
+            "moisture": 10.23
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 11.67,
+            "moisture": 10.17
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 11.17,
+            "moisture": 10.16
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.792828980860349,
+          37.934459418791256
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 8,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 10.0,
+            "moisture": 10.54
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 10.17,
+            "moisture": 10.6
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 10.67,
+            "moisture": 10.79
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 11.46,
+            "moisture": 10.52
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 12.5,
+            "moisture": 10.42
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 13.71,
+            "moisture": 10.5
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 15.0,
+            "moisture": 10.6
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 16.29,
+            "moisture": 10.66
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 17.5,
+            "moisture": 10.45
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 18.54,
+            "moisture": 10.79
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 19.33,
+            "moisture": 10.59
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 19.83,
+            "moisture": 10.72
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 20.0,
+            "moisture": 10.78
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 19.83,
+            "moisture": 10.62
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 19.33,
+            "moisture": 10.53
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 18.54,
+            "moisture": 10.74
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 17.5,
+            "moisture": 10.56
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 16.29,
+            "moisture": 10.62
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 15.0,
+            "moisture": 10.79
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 13.71,
+            "moisture": 10.73
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 12.5,
+            "moisture": 10.57
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 11.46,
+            "moisture": 10.45
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 10.67,
+            "moisture": 10.74
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 10.17,
+            "moisture": 10.64
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.7948289808603475,
+          37.9347365767686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 9,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 10.5,
+            "moisture": 10.4
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 10.67,
+            "moisture": 10.46
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 11.17,
+            "moisture": 10.65
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 11.96,
+            "moisture": 10.38
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 13.0,
+            "moisture": 10.28
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 14.21,
+            "moisture": 10.36
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 15.5,
+            "moisture": 10.46
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 16.79,
+            "moisture": 10.51
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 18.0,
+            "moisture": 10.31
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 19.04,
+            "moisture": 10.65
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 19.83,
+            "moisture": 10.45
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 20.33,
+            "moisture": 10.58
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 20.5,
+            "moisture": 10.64
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 20.33,
+            "moisture": 10.48
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 19.83,
+            "moisture": 10.39
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 19.04,
+            "moisture": 10.6
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 18.0,
+            "moisture": 10.42
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 16.79,
+            "moisture": 10.48
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 15.5,
+            "moisture": 10.65
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 14.21,
+            "moisture": 10.59
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 13.0,
+            "moisture": 10.43
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 11.96,
+            "moisture": 10.31
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 11.17,
+            "moisture": 10.59
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 10.67,
+            "moisture": 10.5
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.794328980860348,
+          37.9347365767686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 10,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 11.0,
+            "moisture": 10.4
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 11.17,
+            "moisture": 10.46
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 11.67,
+            "moisture": 10.65
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 12.46,
+            "moisture": 10.38
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 13.5,
+            "moisture": 10.28
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 14.71,
+            "moisture": 10.36
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 16.0,
+            "moisture": 10.46
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 17.29,
+            "moisture": 10.52
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 18.5,
+            "moisture": 10.31
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 19.54,
+            "moisture": 10.65
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 20.33,
+            "moisture": 10.45
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 20.83,
+            "moisture": 10.58
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 21.0,
+            "moisture": 10.64
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 20.83,
+            "moisture": 10.48
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 20.33,
+            "moisture": 10.39
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 19.54,
+            "moisture": 10.6
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 18.5,
+            "moisture": 10.42
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 17.29,
+            "moisture": 10.48
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 16.0,
+            "moisture": 10.65
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 14.71,
+            "moisture": 10.59
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 13.5,
+            "moisture": 10.43
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 12.46,
+            "moisture": 10.31
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 11.67,
+            "moisture": 10.6
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 11.17,
+            "moisture": 10.5
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.793828980860348,
+          37.9347365767686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 11,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 11.5,
+            "moisture": 10.36
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 11.67,
+            "moisture": 10.42
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 12.17,
+            "moisture": 10.61
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 12.96,
+            "moisture": 10.35
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 14.0,
+            "moisture": 10.25
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 15.21,
+            "moisture": 10.32
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 16.5,
+            "moisture": 10.43
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 17.79,
+            "moisture": 10.48
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 19.0,
+            "moisture": 10.28
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 20.04,
+            "moisture": 10.62
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 20.83,
+            "moisture": 10.42
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 21.33,
+            "moisture": 10.55
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 21.5,
+            "moisture": 10.61
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 21.33,
+            "moisture": 10.44
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 20.83,
+            "moisture": 10.35
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 20.04,
+            "moisture": 10.56
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 19.0,
+            "moisture": 10.38
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 17.79,
+            "moisture": 10.44
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 16.5,
+            "moisture": 10.61
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 15.21,
+            "moisture": 10.56
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 14.0,
+            "moisture": 10.4
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 12.96,
+            "moisture": 10.28
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 12.17,
+            "moisture": 10.56
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 11.67,
+            "moisture": 10.46
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.793328980860348,
+          37.9347365767686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 12,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 12.0,
+            "moisture": 10.29
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 12.17,
+            "moisture": 10.34
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 12.67,
+            "moisture": 10.53
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 13.46,
+            "moisture": 10.27
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 14.5,
+            "moisture": 10.17
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 15.71,
+            "moisture": 10.24
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 17.0,
+            "moisture": 10.35
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 18.29,
+            "moisture": 10.4
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 19.5,
+            "moisture": 10.2
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 20.54,
+            "moisture": 10.54
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 21.33,
+            "moisture": 10.34
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 21.83,
+            "moisture": 10.47
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 22.0,
+            "moisture": 10.53
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 21.83,
+            "moisture": 10.37
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 21.33,
+            "moisture": 10.27
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 20.54,
+            "moisture": 10.48
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 19.5,
+            "moisture": 10.3
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 18.29,
+            "moisture": 10.37
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 17.0,
+            "moisture": 10.53
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 15.71,
+            "moisture": 10.48
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 14.5,
+            "moisture": 10.32
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 13.46,
+            "moisture": 10.2
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 12.67,
+            "moisture": 10.48
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 12.17,
+            "moisture": 10.38
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.792828980860349,
+          37.9347365767686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 11.0,
+            "moisture": 11.05
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 11.17,
+            "moisture": 10.83
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 11.67,
+            "moisture": 10.82
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 12.46,
+            "moisture": 10.8
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 13.5,
+            "moisture": 10.93
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 14.71,
+            "moisture": 11.07
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 16.0,
+            "moisture": 11.0
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 17.29,
+            "moisture": 11.16
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 18.5,
+            "moisture": 10.84
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 19.54,
+            "moisture": 11.06
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 20.33,
+            "moisture": 11.17
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 20.83,
+            "moisture": 10.9
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 21.0,
+            "moisture": 11.0
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 20.83,
+            "moisture": 10.84
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 20.33,
+            "moisture": 11.02
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 19.54,
+            "moisture": 10.84
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 18.5,
+            "moisture": 11.07
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 17.29,
+            "moisture": 11.12
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 16.0,
+            "moisture": 10.83
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 14.71,
+            "moisture": 10.85
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 13.5,
+            "moisture": 10.97
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 12.46,
+            "moisture": 11.09
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 11.67,
+            "moisture": 10.99
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 11.17,
+            "moisture": 11.17
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.7948289808603475,
+          37.935013734745944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 14,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 11.5,
+            "moisture": 11.12
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 11.67,
+            "moisture": 10.9
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 12.17,
+            "moisture": 10.89
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 12.96,
+            "moisture": 10.87
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 14.0,
+            "moisture": 11.0
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 15.21,
+            "moisture": 11.14
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 16.5,
+            "moisture": 11.07
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 17.79,
+            "moisture": 11.23
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 19.0,
+            "moisture": 10.91
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 20.04,
+            "moisture": 11.13
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 20.83,
+            "moisture": 11.24
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 21.33,
+            "moisture": 10.97
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 21.5,
+            "moisture": 11.07
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 21.33,
+            "moisture": 10.91
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 20.83,
+            "moisture": 11.09
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 20.04,
+            "moisture": 10.91
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 19.0,
+            "moisture": 11.14
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 17.79,
+            "moisture": 11.19
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 16.5,
+            "moisture": 10.9
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 15.21,
+            "moisture": 10.92
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 14.0,
+            "moisture": 11.04
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 12.96,
+            "moisture": 11.16
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 12.17,
+            "moisture": 11.07
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 11.67,
+            "moisture": 11.25
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.794328980860348,
+          37.935013734745944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 15,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 12.0,
+            "moisture": 11.17
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 12.17,
+            "moisture": 10.96
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 12.67,
+            "moisture": 10.94
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 13.46,
+            "moisture": 10.93
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 14.5,
+            "moisture": 11.06
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 15.71,
+            "moisture": 11.2
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 17.0,
+            "moisture": 11.13
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 18.29,
+            "moisture": 11.29
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 19.5,
+            "moisture": 10.97
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 20.54,
+            "moisture": 11.19
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 21.33,
+            "moisture": 11.3
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 21.83,
+            "moisture": 11.02
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 22.0,
+            "moisture": 11.12
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 21.83,
+            "moisture": 10.96
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 21.33,
+            "moisture": 11.14
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 20.54,
+            "moisture": 10.97
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 19.5,
+            "moisture": 11.19
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 18.29,
+            "moisture": 11.24
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 17.0,
+            "moisture": 10.95
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 15.71,
+            "moisture": 10.97
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 14.5,
+            "moisture": 11.1
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 13.46,
+            "moisture": 11.21
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 12.67,
+            "moisture": 11.12
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 12.17,
+            "moisture": 11.3
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.793828980860348,
+          37.935013734745944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 16,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 12.5,
+            "moisture": 11.19
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 12.67,
+            "moisture": 10.98
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 13.17,
+            "moisture": 10.96
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 13.96,
+            "moisture": 10.95
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 15.0,
+            "moisture": 11.08
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 16.21,
+            "moisture": 11.22
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 17.5,
+            "moisture": 11.15
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 18.79,
+            "moisture": 11.31
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 20.0,
+            "moisture": 10.99
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 21.04,
+            "moisture": 11.21
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 21.83,
+            "moisture": 11.32
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 22.33,
+            "moisture": 11.04
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 22.5,
+            "moisture": 11.14
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 22.33,
+            "moisture": 10.98
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 21.83,
+            "moisture": 11.16
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 21.04,
+            "moisture": 10.99
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 20.0,
+            "moisture": 11.21
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 18.79,
+            "moisture": 11.26
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 17.5,
+            "moisture": 10.97
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 16.21,
+            "moisture": 10.99
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 15.0,
+            "moisture": 11.12
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 13.96,
+            "moisture": 11.23
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 13.17,
+            "moisture": 11.14
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 12.67,
+            "moisture": 11.32
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.793328980860348,
+          37.935013734745944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 17,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 13.0,
+            "moisture": 11.16
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 13.17,
+            "moisture": 10.95
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 13.67,
+            "moisture": 10.93
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 14.46,
+            "moisture": 10.92
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 15.5,
+            "moisture": 11.05
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 16.71,
+            "moisture": 11.19
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 18.0,
+            "moisture": 11.12
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 19.29,
+            "moisture": 11.28
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 20.5,
+            "moisture": 10.95
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 21.54,
+            "moisture": 11.18
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 22.33,
+            "moisture": 11.29
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 22.83,
+            "moisture": 11.01
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 23.0,
+            "moisture": 11.11
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 22.83,
+            "moisture": 10.95
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 22.33,
+            "moisture": 11.13
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 21.54,
+            "moisture": 10.96
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 20.5,
+            "moisture": 11.18
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 19.29,
+            "moisture": 11.23
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 18.0,
+            "moisture": 10.94
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 16.71,
+            "moisture": 10.96
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 15.5,
+            "moisture": 11.09
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 14.46,
+            "moisture": 11.2
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 13.67,
+            "moisture": 11.11
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 13.17,
+            "moisture": 11.29
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.792828980860349,
+          37.935013734745944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 18,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 12.0,
+            "moisture": 11.16
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 12.17,
+            "moisture": 11.28
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 12.67,
+            "moisture": 11.22
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 13.46,
+            "moisture": 11.23
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 14.5,
+            "moisture": 11.15
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 15.71,
+            "moisture": 11.38
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 17.0,
+            "moisture": 11.08
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 18.29,
+            "moisture": 11.05
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 19.5,
+            "moisture": 11.32
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 20.54,
+            "moisture": 11.09
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 21.33,
+            "moisture": 11.17
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 21.83,
+            "moisture": 11.3
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 22.0,
+            "moisture": 11.07
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 21.83,
+            "moisture": 11.01
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 21.33,
+            "moisture": 11.39
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 20.54,
+            "moisture": 11.34
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 19.5,
+            "moisture": 11.05
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 18.29,
+            "moisture": 11.12
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 17.0,
+            "moisture": 11.33
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 15.71,
+            "moisture": 11.11
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 14.5,
+            "moisture": 11.11
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 13.46,
+            "moisture": 11.39
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 12.67,
+            "moisture": 11.11
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 12.17,
+            "moisture": 11.24
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.793828980860348,
+          37.93529089272328
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 19,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 13.0,
+            "moisture": 11.12
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 13.17,
+            "moisture": 11.24
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 13.67,
+            "moisture": 11.19
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 14.46,
+            "moisture": 11.19
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 15.5,
+            "moisture": 11.12
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 16.71,
+            "moisture": 11.35
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 18.0,
+            "moisture": 11.04
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 19.29,
+            "moisture": 11.02
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 20.5,
+            "moisture": 11.28
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 21.54,
+            "moisture": 11.06
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 22.33,
+            "moisture": 11.14
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 22.83,
+            "moisture": 11.27
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 23.0,
+            "moisture": 11.03
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 22.83,
+            "moisture": 10.98
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 22.33,
+            "moisture": 11.36
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 21.54,
+            "moisture": 11.31
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 20.5,
+            "moisture": 11.02
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 19.29,
+            "moisture": 11.09
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 18.0,
+            "moisture": 11.29
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 16.71,
+            "moisture": 11.08
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 15.5,
+            "moisture": 11.08
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 14.46,
+            "moisture": 11.36
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 13.67,
+            "moisture": 11.08
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 13.17,
+            "moisture": 11.2
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.793328980860348,
+          37.93529089272328
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 20,
+        "timeSeries": [
+          {
+            "timestamp": "2025-03-30T00:00:00Z",
+            "temperature": 14.0,
+            "moisture": 11.05
+          },
+          {
+            "timestamp": "2025-03-30T01:00:00Z",
+            "temperature": 14.17,
+            "moisture": 11.17
+          },
+          {
+            "timestamp": "2025-03-30T02:00:00Z",
+            "temperature": 14.67,
+            "moisture": 11.12
+          },
+          {
+            "timestamp": "2025-03-30T03:00:00Z",
+            "temperature": 15.46,
+            "moisture": 11.12
+          },
+          {
+            "timestamp": "2025-03-30T04:00:00Z",
+            "temperature": 16.5,
+            "moisture": 11.05
+          },
+          {
+            "timestamp": "2025-03-30T05:00:00Z",
+            "temperature": 17.71,
+            "moisture": 11.28
+          },
+          {
+            "timestamp": "2025-03-30T06:00:00Z",
+            "temperature": 19.0,
+            "moisture": 10.97
+          },
+          {
+            "timestamp": "2025-03-30T07:00:00Z",
+            "temperature": 20.29,
+            "moisture": 10.95
+          },
+          {
+            "timestamp": "2025-03-30T08:00:00Z",
+            "temperature": 21.5,
+            "moisture": 11.21
+          },
+          {
+            "timestamp": "2025-03-30T09:00:00Z",
+            "temperature": 22.54,
+            "moisture": 10.99
+          },
+          {
+            "timestamp": "2025-03-30T10:00:00Z",
+            "temperature": 23.33,
+            "moisture": 11.06
+          },
+          {
+            "timestamp": "2025-03-30T11:00:00Z",
+            "temperature": 23.83,
+            "moisture": 11.2
+          },
+          {
+            "timestamp": "2025-03-30T12:00:00Z",
+            "temperature": 24.0,
+            "moisture": 10.96
+          },
+          {
+            "timestamp": "2025-03-30T13:00:00Z",
+            "temperature": 23.83,
+            "moisture": 10.91
+          },
+          {
+            "timestamp": "2025-03-30T14:00:00Z",
+            "temperature": 23.33,
+            "moisture": 11.29
+          },
+          {
+            "timestamp": "2025-03-30T15:00:00Z",
+            "temperature": 22.54,
+            "moisture": 11.24
+          },
+          {
+            "timestamp": "2025-03-30T16:00:00Z",
+            "temperature": 21.5,
+            "moisture": 10.95
+          },
+          {
+            "timestamp": "2025-03-30T17:00:00Z",
+            "temperature": 20.29,
+            "moisture": 11.02
+          },
+          {
+            "timestamp": "2025-03-30T18:00:00Z",
+            "temperature": 19.0,
+            "moisture": 11.22
+          },
+          {
+            "timestamp": "2025-03-30T19:00:00Z",
+            "temperature": 17.71,
+            "moisture": 11.01
+          },
+          {
+            "timestamp": "2025-03-30T20:00:00Z",
+            "temperature": 16.5,
+            "moisture": 11.01
+          },
+          {
+            "timestamp": "2025-03-30T21:00:00Z",
+            "temperature": 15.46,
+            "moisture": 11.29
+          },
+          {
+            "timestamp": "2025-03-30T22:00:00Z",
+            "temperature": 14.67,
+            "moisture": 11.01
+          },
+          {
+            "timestamp": "2025-03-30T23:00:00Z",
+            "temperature": 14.17,
+            "moisture": 11.13
+          }
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.792828980860349,
+          37.93529089272328
+        ]
+      }
+    }
+  ]
+}

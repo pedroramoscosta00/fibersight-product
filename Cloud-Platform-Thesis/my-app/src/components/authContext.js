@@ -37,8 +37,22 @@ export const AuthProvider = ({ children }) => {
         setUser(null);
     };
 
+    const updateUserData = async () => {
+        const token = localStorage.getItem('token');
+        if (!token) return;
+        try {
+            const updatedProfile = await getCosmicProfile(token);
+            const userData = { ...updatedProfile, slug: token };
+            setUser(userData);
+            localStorage.setItem('user', JSON.stringify(userData));
+            console.log('✅ User updated in context:', userData);
+        } catch (error) {
+            console.error('Failed to update user data:', error);
+        }
+    };
+
     return (
-        <AuthContext.Provider value={{ user, isLoading, login, logout }}>
+        <AuthContext.Provider value={{ user, isLoading, login, logout, updateUserData }}>
             {children}
         </AuthContext.Provider>
     );

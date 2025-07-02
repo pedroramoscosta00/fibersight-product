@@ -234,7 +234,7 @@ function History() {
         setAveragedData({ timestamps, temperatures, moistures });
     };
 
-    const layout = {
+    const layout1 = {
         title: 'Average Temperature',
         xaxis: {
             title: 'Timestamp',
@@ -244,6 +244,38 @@ function History() {
             gridcolor: isDarkMode ? '#f8f8ff' : '#252525',
         },
         yaxis: {
+            autorange: false,
+            range: [Math.min(...averagedData.temperatures) - 0.01, Math.max(...averagedData.temperatures) + 0.01],
+            title: 'Average Temperature (°C)',
+            gridcolor: isDarkMode ? '#f8f8ff' : '#252525',
+        },
+        autosize: true,
+        margin: {
+            l: 50,
+            r: 0,
+            b: 50,
+            t: 10,
+            pad: 0
+        },
+        paper_bgcolor: isDarkMode ? '#4A4A4A' : '#FFFFFF',
+        plot_bgcolor: isDarkMode ? '#4A4A4A' : '#FFFFFF',
+        font: {
+            color: isDarkMode ? '#f8f8ff' : '#252525',
+        },
+    }
+    const layout2 = {
+        title: 'Average Temperature',
+        xaxis: {
+
+            title: 'Timestamp',
+            tickangle: 0,
+            tickvals: averagedData.timestamps,
+            automargin: true,
+            gridcolor: isDarkMode ? '#f8f8ff' : '#252525',
+        },
+        yaxis: {
+            autorange: false,
+            range: [Math.min(...averagedData.moistures) - 0.01, Math.max(...averagedData.moistures) + 0.01],
             title: 'Average Temperature (°C)',
             gridcolor: isDarkMode ? '#f8f8ff' : '#252525',
         },
@@ -328,10 +360,10 @@ function History() {
                 </div>
                 {selectedDate && (
                     <div className='history-info'>
-                        <div class="rule-date">
-                            <div class="rule rule-left" />
+                        <div className="rule-date">
+                            <div className="rule rule-left" />
                             <h2>Data for {selectedDate}</h2>
-                            <div class="rule rule-right" />
+                            <div className="rule rule-right" />
                         </div>
                         {activeFibers.size === 0 ? (
                             <p style={{ padding: '1rem', fontWeight: 'bold' }}>
@@ -384,11 +416,13 @@ function History() {
                                                         mode: 'lines+markers',
                                                         x: averagedData.timestamps,
                                                         y: averagedData.temperatures,
-                                                        marker: { color: 'blue' },
-                                                        fill: '',
+                                                        marker: { color: '#ED6A46' },
+                                                        line: { color: '#ED6A46' },
+                                                        fill: 'tozeroy',
+                                                        fillcolor: 'rgba(254, 240, 119, 0.5)',
                                                     },
                                                 ]}
-                                                layout={layout}
+                                                layout={layout1}
                                             />
                                         </div>
                                         <div className='hist-graphs-moist'>
@@ -402,10 +436,13 @@ function History() {
                                                         mode: 'lines+markers',
                                                         x: averagedData.timestamps,
                                                         y: averagedData.moistures,
-                                                        marker: { color: 'blue' },
+                                                        marker: { color: '#42509E' },
+                                                        line: { color: '#42509E' },
+                                                        fill: 'tozeroy',
+                                                        fillcolor: 'rgba(167, 219, 243, 0.5)',
                                                     },
                                                 ]}
-                                                layout={layout}
+                                                layout={layout2}
                                             />
                                         </div>
                                     </div>

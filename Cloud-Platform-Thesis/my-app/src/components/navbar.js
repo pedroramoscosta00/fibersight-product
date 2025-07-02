@@ -16,7 +16,7 @@ import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
 import Avatar from '@mui/material/Avatar';
 import { useMuiAlert } from "./muiAlertProvider";
-
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 
 function Navbar() {
     const [alerts, setAlerts] = useState([]);
@@ -24,7 +24,14 @@ function Navbar() {
     const [isOverlayOpen, setIsOverlayOpen] = useState(false);
     const [isProfileOverlayOpen, setIsProfileOverlayOpen] = useState(false);
 
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+
     const { user } = useAuth();
+
+    const profilePicture = user?.profilepicture?.url ||
+        user?.profilepicture ||
+        UserIcon;
 
     const fetchCosmicAlerts = async () => {
         try {
@@ -60,13 +67,13 @@ function Navbar() {
                     <img src={logo} alt="fibersight_logo"></img>
                 </div>
                 <div className="nav-pages">
-                    <div>
+                    <div className="nav-buttons">
                         <NavLink to="/map">
                             {({ isActive }) => (
                                 <>
                                     <button className={`nav-bt ${isActive ? "active" : ""}`}>
                                         <MapRoundedIcon className="nav-bt-icon" fontSize="large" />
-                                        Map
+                                        <span className="nav-bt-text">Map</span>
                                     </button>
                                 </>
                             )}
@@ -78,7 +85,7 @@ function Navbar() {
                                 <>
                                     <button className={`nav-bt ${isActive ? "active" : ""}`}>
                                         <ShowChartRoundedIcon className="nav-bt-icon" fontSize="large" />
-                                        Analytics
+                                        <span className="nav-bt-text">Analytics</span>
                                     </button>
                                 </>
                             )}
@@ -91,7 +98,7 @@ function Navbar() {
                                 <>
                                     <button className={`nav-bt ${isActive ? "active" : ""}`}>
                                         <HistoryRoundedIcon className="nav-bt-icon" fontSize="large" />
-                                        History
+                                        <span className="nav-bt-text">History</span>
                                     </button>
                                 </>
                             )}
@@ -104,7 +111,7 @@ function Navbar() {
                                 <>
                                     <button className={`nav-bt ${isActive ? "active" : ""}`}>
                                         <SettingsRoundedIcon className="nav-bt-icon" fontSize="large" />
-                                        Settings
+                                        <span className="nav-bt-text">Settings</span>
                                     </button>
                                 </>
                             )}
@@ -121,12 +128,16 @@ function Navbar() {
                     <div className='nav-profile'>
                         <Avatar
                             alt="User icon"
-                            src={UserIcon}
+                            src={profilePicture}
                             className={`nav-profile-icon ${isProfileOverlayOpen ? "active" : ""}`}
                             onClick={() => user && setIsProfileOverlayOpen(!isProfileOverlayOpen)}
                         />
                     </div>
                 </div>
+
+                <button className="hamburger-menu" onClick={toggleMenu}>
+                    <MenuRoundedIcon />
+                </button>
             </nav>
             <OverlayAlerts
                 isOpen={isOverlayOpen}

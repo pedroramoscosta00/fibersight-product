@@ -17,15 +17,19 @@ function isColorLight(hexColor) {
     return luminance > 0.6;
 }
 
-function FiberCard({ fiberId, fiberName, geojsonPath, title, distance, onDelete }) {
+function FiberCard({
+    fiberId, fiberName, geojsonPath,
+    title, distance, onDelete, showPicker, setShowPicker
+}) {
     const { getColor, setColor } = useFiberColors();
     const color = getColor(fiberId);
-    const [showPicker, setShowPicker] = useState(false);
+    //const [showPicker, setShowPicker] = useState(false);
     const mapRef = useRef(null);
     const mapContainerRef = useRef(null);
     const [geojson, setGeojson] = useState(null);
     const layerId = `fiber-layer-${fiberId}`;
     const sourceId = `fiber-source-${fiberId}`;
+    const pickerRef = useRef();
 
     // Fetch the GeoJSON
     useEffect(() => {
@@ -41,8 +45,9 @@ function FiberCard({ fiberId, fiberName, geojsonPath, title, distance, onDelete 
         const map = new mapboxgl.Map({
             container: mapContainerRef.current,
             style: 'mapbox://styles/mapbox/satellite-v9',
-            center: [-7.794940, 37.933671],
-            zoom: 12.5
+            center: [-7.794542005697252, 37.93624919450497],
+            zoom: 14,
+            cooperativeGestures: true
         });
 
         mapRef.current = map;
@@ -62,7 +67,7 @@ function FiberCard({ fiberId, fiberName, geojsonPath, title, distance, onDelete 
                     type: 'circle',
                     source: sourceId,
                     paint: {
-                        'circle-radius': 6,
+                        'circle-radius': 3,
                         'circle-color': color,
                     },
                 });
@@ -85,6 +90,20 @@ function FiberCard({ fiberId, fiberName, geojsonPath, title, distance, onDelete 
         }
     }, [color, layerId]);
 
+    useEffect(() => {
+        if (!showPicker) return;
+        function handleClickOutside(event) {
+            if (
+                pickerRef.current &&
+                !pickerRef.current.contains(event.target)
+            ) {
+                setShowPicker(false);
+            }
+        }
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, [showPicker, setShowPicker]);
+
     return (
         <div className="fiber-card" style={{ borderColor: color }}>
             <div className="card-head">
@@ -94,32 +113,43 @@ function FiberCard({ fiberId, fiberName, geojsonPath, title, distance, onDelete 
                 </div>
                 <div
                     className="card-color"
-                    style={{ backgroundColor: color }}
-                    onClick={() => setShowPicker(!showPicker)}
+                    style={{ backgroundColor: color, position: 'relative' }}
+                    onClick={e => {
+                        e.stopPropagation();
+                        setShowPicker(!showPicker);
+                    }}
                 >
                     <ColorizeRoundedIcon
                         style={{
                             color: isColorLight(color) ? '#252525' : '#f8f8ff',
                             cursor: 'pointer'
-
                         }}
                     />
+                    {showPicker && (
+                        <div
+                            className="color-picker-popover"
+                            ref={pickerRef}
+                            style={{
+                                position: 'absolute',
+                                zIndex: 10,
+                                top: '2.5rem',
+                                right: 0,
+                            }}
+                            onClick={e => e.stopPropagation()}
+                        >
+                            <ChromePicker
+                                color={color}
+                                onChangeComplete={(newColor) => setColor(fiberId, newColor.hex)}
+                            />
+                        </div>
+                    )}
                 </div>
+
             </div>
-
-            {showPicker && (
-                <ChromePicker
-                    color={color}
-                    onChangeComplete={(newColor) => setColor(fiberId, newColor.hex)}
-                    
-                />
-            )}
-
             <div className="card-map" ref={mapContainerRef}></div>
-
             <div className="card-buttons">
                 <button className='card-delete' onClick={onDelete}>Delete</button>
-                <button className='card-details'>Details</button>
+                {/*<button className='card-details'>Details</button>*/}
             </div>
         </div>
     );

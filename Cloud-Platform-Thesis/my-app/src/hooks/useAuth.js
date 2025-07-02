@@ -9,6 +9,18 @@ export const useAuth = () => {
     });
     const [isLoading, setIsLoading] = useState(true);
 
+    const updateUserData = async (slug) => {
+        try {
+            const profile = await getCosmicProfile(slug);
+            const updatedUser = { ...profile, slug };
+            console.log('Updated user:', updatedUser);
+            localStorage.setItem('user_data', JSON.stringify(updatedUser));
+            setUser(updatedUser);
+        } catch (error) {
+            console.error('Failed to update user data:', error);
+        }
+    };
+
     useEffect(() => {
         const validateSession = async () => {
             const token = localStorage.getItem('cosmic_token');
@@ -38,5 +50,5 @@ export const useAuth = () => {
         setUser(null);
     };
 
-    return { user, isLoading, login, logout };
+    return { user, isLoading, login, logout, updateUserData };
 };

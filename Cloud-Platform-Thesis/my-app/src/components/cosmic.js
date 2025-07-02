@@ -1,5 +1,7 @@
 import { createBucketClient } from '@cosmicjs/sdk';
 import { update } from 'plotly.js';
+import { useState } from 'react';
+
 
 // Initialize
 const cosmic = createBucketClient({
@@ -57,9 +59,11 @@ export const getCosmicProfile = async (slug) => {
 
     if (!object) throw new Error('Profile not found');
 
+    console.log('Fetched profile data:', object.metadata);
+
     // Remove password before returning
     const { password, ...profile } = object.metadata;
-    return profile;
+    return { ...profile, password };
   } catch (error) {
     console.error('Error fetching profile:', error);
     throw error;
@@ -74,7 +78,7 @@ export const saveCosmicProfile = async (slug, profileData) => {
       profileData: JSON.stringify(profileData, null, 2)
     });
 
-    const response = await fetch('http://localhost:5000/api/save-profile', {
+    const response = await fetch('http://localhost:5000/save-profile', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

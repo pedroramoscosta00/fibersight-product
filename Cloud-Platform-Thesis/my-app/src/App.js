@@ -18,7 +18,9 @@ import {
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    return localStorage.getItem('theme');
+    const stored = localStorage.getItem('theme');
+    // Default to light mode if nothing is stored
+    return stored ? stored === 'dark' : false;
   });
   const [globalAlerts, setGlobalAlerts] = useState([]);
   const addAlert = (newAlert) => {
@@ -140,7 +142,7 @@ function App() {
                   />
                   <Route
                     path="/overlayProfile"
-                    element={<OverlayProfile isDarkMode={isDarkMode} onNewAlert={addAlert} user={user} />}
+                    element={<OverlayProfile isDarkMode={isDarkMode} onNewAlert={addAlert} />}
                   />
                   <Route
                     path="/editProfile"

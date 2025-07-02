@@ -3,50 +3,59 @@ import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import Slider from '@mui/material/Slider';
 
-//Import datasets
-import geojsonData1 from '../fiber-points/fiber_points.geojson';
-import geojsonData2 from '../fiber-points/fiber_points2.geojson';
-import geojsonData3 from '../fiber-points/fiber_points3.geojson';
-import geojsonData4 from '../fiber-points/fiber_points4.geojson';
-import geojsonData5 from '../fiber-points/fiber_points5.geojson';
-
 //Import components
 import { FiberToggles } from '../components/fiberToggles';
 import { TempScale } from '../components/tempScale';
 import { WeatherWidget } from '../components/weatherWidget';
 
-function Map() {
-  //Map element
-  const mapRef = useRef(null);
-  const mapContainerRef = useRef(null);
-  const [zoomLevel, setZoomLevel] = useState(16);
-  const [activeParameter, setActiveParameter] = useState('temperature'); // Changed to match config keys
-  const [isHeatMapVisible, setIsHeatMapVisible] = useState(true); // Default to visible
+export const systemFolders = ['system1', 'system2', 'system3'];
+export const fileNames = [
+  'geo-2025-06-01.geojson',
+  'geo-2025-06-02.geojson',
+  'geo-2025-06-03.geojson',
+  'geo-2025-06-04.geojson',
+  'geo-2025-06-05.geojson',
+];
 
+const fetchSystemFiles = async (system) =>
+  Promise.all(
+    fileNames.map(fileName =>
+      fetch(`/fiber-points/${system}/${fileName}`).then(res => res.json())
+    )
+  );
 
-  const toggleHeatMap = (fiberId, isVisible) => {
-    const layerId = `heatmap-layer-${fiberId}`;
+const fetchGeoJson = async (fileName) => {
+  const response = await fetch(`/fiber-points/system1/${fileName}`);
+  if (!response.ok) throw new Error(`Failed to fetch ${fileName}`);
+  return response.json();
+};
 
-    if (mapRef.current && mapRef.current.getLayer(layerId)) {
-      mapRef.current.setLayoutProperty(layerId, 'visibility', isVisible ? 'visible' : 'none');
+function preprocessGeoJson(geoJson, activeParameter, systemName) {
+  if (!geoJson || !geoJson.features) return { type: "FeatureCollection", features: [] };
+  const processed = JSON.parse(JSON.stringify(geoJson));
+  processed.features.forEach(feature => {
+    feature.properties.system = systemName;
+    const ts = feature.properties?.timeSeries;
+    if (Array.isArray(ts) && ts.length > 0) {
+      feature.properties.temperature = ts[0].temperature;
+      feature.properties.moisture = ts[0].moisture;
+    } else {
+      feature.properties.temperature = null;
+      feature.properties.moisture = null;
     }
-  };
+  });
+  return processed;
+}
 
-
-
-  //Slider element
-  const [sliderValue, setSliderValue] = useState(25);  // Add state for the slider value
-
-  //Map element
-  //Define color schemes for each parameter
-  const parameterConfig = {
+const systemParameterConfig = {
+  system1: {
     temperature: {
       colorStops: [
         0, 'rgba(0, 0, 255, 0)',
         0.5, 'rgba(254, 240, 119, 0.5)',
         1, 'rgba(237, 106, 70, 1)'
       ],
-      weightRange: [0, 35],
+      weightRange: [18, 33],
       unit: '°C'
     },
     moisture: {
@@ -55,10 +64,140 @@ function Map() {
         0.5, 'rgba(167, 219, 243, 0.5)',
         1, 'rgba(66, 80, 158, 1)'
       ],
-      weightRange: [0, 20],
+      weightRange: [5.80, 6.05],
       unit: '%'
     }
+  },
+  system2: {
+    temperature: {
+      colorStops: [
+        0, 'rgba(0, 0, 255, 0)',
+        0.5, 'rgba(254, 240, 119, 0.5)',
+        1, 'rgba(237, 106, 70, 1)'
+      ],
+      weightRange: [15, 30],
+      unit: '°C'
+    },
+    moisture: {
+      colorStops: [
+        0, 'rgba(33, 102, 172, 0)',
+        0.5, 'rgba(167, 219, 243, 0.5)',
+        1, 'rgba(66, 80, 158, 1)'
+      ],
+      weightRange: [2.80, 3.1],
+      unit: '%'
+    }
+  },
+  system3: {
+    temperature: {
+      colorStops: [
+        0, 'rgba(0, 0, 255, 0)',
+        0.5, 'rgba(254, 240, 119, 0.5)',
+        1, 'rgba(237, 106, 70, 1)'
+      ],
+      weightRange: [21, 35],
+      unit: '°C'
+    },
+    moisture: {
+      colorStops: [
+        0, 'rgba(33, 102, 172, 0)',
+        0.5, 'rgba(167, 219, 243, 0.5)',
+        1, 'rgba(66, 80, 158, 1)'
+      ],
+      weightRange: [7.80, 8],
+      unit: '%'
+    }
+  }
+};
+
+function Map() {
+  //Map element
+  const mapRef = useRef(null);
+  const mapContainerRef = useRef(null);
+  const [zoomLevel, setZoomLevel] = useState(16);
+  const [activeParameter, setActiveParameter] = useState('temperature'); // Changed to match config keys
+  const [isHeatMapVisible, setIsHeatMapVisible] = useState(true); // Default to visible
+  const [mapLoaded, setMapLoaded] = useState(false);
+  const [systemFiles, setSystemFiles] = useState({});
+
+  const [geoJsonFiles, setGeoJsonFiles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const loadAllSystemFiles = async () => {
+      const allFiles = {};
+      for (const system of systemFolders) {
+        allFiles[system] = await fetchSystemFiles(system);
+      }
+      setSystemFiles(allFiles);
+    };
+    loadAllSystemFiles();
+  }, []);
+
+  useEffect(() => {
+    if (systemFiles.system2) {
+      console.log('system2 features:', systemFiles.system2[0]?.features?.length);
+      console.log('system2 sample feature:', systemFiles.system2[0]?.features?.[0]);
+    }
+  }, [systemFiles]);
+
+  useEffect(() => {
+    const loadGeoJsonFiles = async () => {
+      try {
+        const loadedFiles = await Promise.all(
+          fileNames.map(fileName => fetchGeoJson(fileName))
+        );
+        setGeoJsonFiles(loadedFiles);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadGeoJsonFiles();
+  }, []);
+
+  const toggleHeatMap = (fiberId, isVisible) => {
+    const heatmapLayerId = `heatmap-layer-${fiberId}`;
+    const circleLayerId = `circle-layer-${fiberId}`;
+
+    if (mapRef.current) {
+      if (mapRef.current.getLayer(heatmapLayerId)) {
+        mapRef.current.setLayoutProperty(heatmapLayerId, 'visibility', isVisible ? 'visible' : 'none');
+      }
+      if (mapRef.current.getLayer(circleLayerId)) {
+        mapRef.current.setLayoutProperty(circleLayerId, 'visibility', isVisible ? 'visible' : 'none');
+      }
+    }
   };
+
+  //Slider element
+  const [sliderValue, setSliderValue] = useState(25);  // Add state for the slider value
+
+  //Map element
+  //Define color schemes for each parameter
+  /*const parameterConfig = {
+    temperature: {
+      colorStops: [
+        0, 'rgba(0, 0, 255, 0)',
+        0.5, 'rgba(254, 240, 119, 0.5)',
+        1, 'rgba(237, 106, 70, 1)'
+      ],
+      weightRange: [15, 25],
+      unit: '°C'
+    },
+    moisture: {
+      colorStops: [
+        0, 'rgba(33, 102, 172, 0)',
+        0.5, 'rgba(167, 219, 243, 0.5)',
+        1, 'rgba(66, 80, 158, 1)'
+      ],
+      weightRange: [5, 7],
+      unit: '%'
+    }
+  };*/
 
   //Slider element
   const handleSliderChange = (event, newValue) => {
@@ -67,24 +206,27 @@ function Map() {
 
     //Get the approppriate GeoJson file based on slider value
     const newGeoJson = getGeoJsonForSliderValue(newValue);
+    const processedGeoJson = preprocessGeoJson(newGeoJson, activeParameter);
 
     //Update the source of the map with the new GeoJson
     if (mapRef.current) {
-      mapRef.current.getSource('fiber-points').setData(newGeoJson);
+      mapRef.current.getSource('fiber-points').setData(processedGeoJson);
     }
   }
 
   //Map element
   useEffect(() => {
+    if (loading) return;
+
     mapboxgl.accessToken = 'pk.eyJ1IjoicGVkcm9jb3N0YTI1IiwiYSI6ImNtOGczbGowcDBsM2EyaXF4MnJneTdmYjYifQ.od-UfH6VA3Zo5vPo7Mey5g';
 
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: 'mapbox://styles/mapbox/satellite-v9',
-      center: [-7.794940, 37.933671],
+      center: [-7.795230387481382, 37.93632356754527],
       zoom: zoomLevel,
+      cooperativeGestures: true
     });
-
 
     mapRef.current = map;
 
@@ -97,65 +239,40 @@ function Map() {
         }
       });
 
+      const initialGeoJson = geoJsonFiles[0];
+
       //Add source
       map.addSource('fiber-points', {
         type: 'geojson',
-        data: geojsonData1,
+        data: preprocessGeoJson(initialGeoJson, activeParameter),
       });
 
       //Add heatmap layer
-      map.addLayer({
+      /*map.addLayer({
         id: 'heatmap-layer-1',
         type: 'heatmap',
         source: 'fiber-points',
         paint: getHeatmapPaintConfig()
-      });
+      });*/
 
       //Add circle layer to represent each fiber point
-      map.addLayer({
-        id: 'circle-layer',
-        type: 'circle',
-        source: 'fiber-points',
-        paint: {
-          'circle-radius': [
-            'interpolate',
-            ['linear'],
-            ['zoom'],
-            17.5, 0,
-            18, 5
-          ],
-          'circle-color': '#f8f8ff',
-          'circle-opacity': [
-            'interpolate',
-            ['linear'],
-            ['zoom'],
-            17.5, 0,
-            18, 0.5
-          ],
-          "circle-stroke-width": 1,
-          "circle-stroke-color": '#252525',
-          'circle-stroke-opacity': [
-            'interpolate',
-            ['linear'],
-            ['zoom'],
-            17.5, 0,
-            18, 0.5
-          ],
-        },
-      });
+
     }
 
-    map.on('load', initializeMap);
+    map.on('load', () => {
+      initializeMap();
+      setMapLoaded(true); // <--- set loaded
+    });
     map.on('zoom', () => setZoomLevel(map.getZoom()));
 
     return () => map.remove();
 
-  }, []);
+  }, [loading]);
 
   //Update heatmap when parameter changes
   useEffect(() => {
     if (mapRef.current && mapRef.current.getLayer('heatmap-layer-1')) {
-      const config = parameterConfig[activeParameter];
+      const config = systemParameterConfig[activeParameter];
       if (!config) return;
 
       mapRef.current.setPaintProperty('heatmap-layer-1', 'heatmap-color', [
@@ -174,6 +291,47 @@ function Map() {
       ]);
     }
   }, [activeParameter]);
+
+  useEffect(() => {
+    if (!mapLoaded) return;
+    if (!systemFiles || Object.keys(systemFiles).length === 0) return;
+
+    const map = mapRef.current;
+
+    systemFolders.forEach(system => {
+      const files = systemFiles[system];
+      if (!files || !files.length) return;
+      const source = map.getSource(`fiber-points-${system}`);
+      if (source) {
+        const newGeoJson = getGeoJsonForSliderValue(files, sliderValue);
+        source.setData(preprocessGeoJson(newGeoJson, activeParameter, system));
+      }
+    });
+  }, [sliderValue, activeParameter, mapLoaded, systemFiles]);
+
+  useEffect(() => {
+    if (!mapLoaded) return;
+    const map = mapRef.current;
+    systemFolders.forEach(system => {
+      const layerId = `heatmap-layer-${system}`;
+      const config = systemParameterConfig[system][activeParameter]; // <-- CORRECT
+      if (map.getLayer(layerId) && config) {
+        map.setPaintProperty(layerId, 'heatmap-color', [
+          'interpolate',
+          ['linear'],
+          ['heatmap-density'],
+          ...config.colorStops
+        ]);
+        map.setPaintProperty(layerId, 'heatmap-weight', [
+          'interpolate',
+          ['linear'],
+          ['get', activeParameter],
+          config.weightRange[0], 0,
+          config.weightRange[1], 1
+        ]);
+      }
+    });
+  }, [activeParameter, mapLoaded]);
 
 
   //useEffect to update hover popup when switching parameters
@@ -197,7 +355,8 @@ function Map() {
           return;
         }
 
-        const unit = parameterConfig[activeParameter]?.unit || '';
+        const system = feature.properties.system || 'system1';
+        const unit = systemParameterConfig[system][activeParameter]?.unit || '';
 
         popup
           .setLngLat(coordinates.slice(0, 2))
@@ -213,25 +372,26 @@ function Map() {
       map.getCanvas().style.cursor = '';
     };
 
-    //Remove old event listeners before adding new ones
-    map.off('mouseenter', 'circle-layer', handleMouseEnter);
-    map.off('mouseleave', 'circle-layer', handleMouseLeave);
+    // Remove old event listeners before adding new ones
+    systemFolders.forEach(system => {
+      map.off('mouseenter', `circle-layer-${system}`, handleMouseEnter);
+      map.off('mouseleave', `circle-layer-${system}`, handleMouseLeave);
 
-    //Add event listeners again with updated activeParameter
-    map.on('mouseenter', 'circle-layer', handleMouseEnter);
-    map.on('mouseleave', 'circle-layer', handleMouseLeave);
+      map.on('mouseenter', `circle-layer-${system}`, handleMouseEnter);
+      map.on('mouseleave', `circle-layer-${system}`, handleMouseLeave);
+    });
 
-    //Cleanup function
+    // Cleanup function
     return () => {
-      map.off('mouseenter', 'circle-layer', handleMouseEnter);
-      map.off('mouseleave', 'circle-layer', handleMouseLeave);
+      systemFolders.forEach(system => {
+        map.off('mouseenter', `circle-layer-${system}`, handleMouseEnter);
+        map.off('mouseleave', `circle-layer-${system}`, handleMouseLeave);
+      });
     };
-  }, [activeParameter]);  //Re-run when activeParameter changes
-
+  }, [activeParameter, mapLoaded]);
 
   //Helper function for heatmap paint config
-  const getHeatmapPaintConfig = () => {
-    const config = parameterConfig[activeParameter];
+  const getHeatmapPaintConfig = (config) => {
     if (!config) return {};
 
     return {
@@ -265,21 +425,78 @@ function Map() {
     };
   };
 
-  console.log(zoomLevel);
+  //console.log(zoomLevel);
 
-  //Slider element
-  const geoJsonFiles = [
-    geojsonData1,
-    geojsonData2,
-    geojsonData3,
-    geojsonData4,
-    geojsonData5
-  ];
-
-  const getGeoJsonForSliderValue = (sliderValue) => {
-    const index = Math.floor(sliderValue / 25);
-    return geoJsonFiles[index];
+  function getGeoJsonForSliderValue(files, sliderValue) {
+    if (!files || !files.length) return { type: "FeatureCollection", features: [] };
+    const index = Math.max(0, Math.min(files.length - 1, Math.floor(sliderValue / 25)));
+    return files[index] || { type: "FeatureCollection", features: [] };
   }
+
+  // Update your useEffect that depends on the GeoJSON data
+  useEffect(() => {
+    if (!mapLoaded) return;
+    if (!systemFiles || Object.keys(systemFiles).length === 0) return;
+
+    const map = mapRef.current;
+
+    systemFolders.forEach(system => {
+      // Only add if not already present
+      if (!map.getSource(`fiber-points-${system}`)) {
+        const files = systemFiles[system];
+        if (!files || !files.length) return;
+        map.addSource(`fiber-points-${system}`, {
+          type: 'geojson',
+          data: preprocessGeoJson(files[0], activeParameter, system),
+        });
+        const config = systemParameterConfig[system][activeParameter];
+        const firstSymbolId = map.getStyle().layers.find(l => l.type === 'symbol')?.id;
+
+        map.addLayer({
+          id: `heatmap-layer-${system}`,
+          type: 'heatmap',
+          source: `fiber-points-${system}`,
+          paint: getHeatmapPaintConfig(config)
+        }, firstSymbolId);
+        // Add the circle layer for this system
+        map.addLayer({
+          id: `circle-layer-${system}`,
+          type: 'circle',
+          source: `fiber-points-${system}`,
+          paint: {
+            'circle-radius': [
+              'interpolate',
+              ['linear'],
+              ['zoom'],
+              17.5, 0,
+              18, 5
+            ],
+            'circle-color': '#f8f8ff',
+            'circle-opacity': [
+              'interpolate',
+              ['linear'],
+              ['zoom'],
+              17.5, 0,
+              18, 0.5
+            ],
+            "circle-stroke-width": 1,
+            "circle-stroke-color": '#252525',
+            'circle-stroke-opacity': [
+              'interpolate',
+              ['linear'],
+              ['zoom'],
+              17.5, 0,
+              18, 0.5
+            ],
+          },
+        }, firstSymbolId);
+      }
+    });
+  }, [mapLoaded, systemFiles, activeParameter]);
+
+  if (loading) return <div>Loading map data...</div>;
+  if (error) return <div>Error loading data: {error}</div>;
+
 
   return (
     <div className="map-body">
